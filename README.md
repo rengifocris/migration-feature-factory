@@ -53,6 +53,12 @@ The core rule:
 - [Review And QA Brief](templates/review/review-qa.md)
 - [Closeout](templates/migration/closeout.md)
 
+## Public Example
+
+- [Fake Login Migration](examples/fake-login-migration/migration-package-index.md):
+  complete public-safe package showing intake, behavior inventory, parity plan,
+  spec artifacts, architecture decision, review and closeout.
+
 ## Minimal Scripts
 
 ```sh

@@ -27,7 +27,7 @@ Build a public-safe V0 of Migration Feature Factory:
 | 4 | EPIC-04 | Epic | Codex skill package | completed | Reusable skill and references. |
 | 5 | EPIC-05 | Epic | Traceability harness and hooks | completed | Package index, checks and hook examples. |
 | 6 | EPIC-06 | Epic | Minimal scripts | completed | Scaffold, check and context summary. |
-| 7 | EPIC-07 | Epic | Public fake example | draft | Demonstrates end-to-end migration package. |
+| 7 | EPIC-07 | Epic | Public fake example | completed | Demonstrates end-to-end migration package. |
 | 8 | EPIC-08 | Epic | Release readiness | draft | License, README polish, checks and public safety review. |
 
 ## EPIC-01 - Public Repo Foundation
@@ -348,7 +348,7 @@ Out of scope:
 
 ## EPIC-07 - Public Fake Example
 
-Status: draft
+Status: completed
 
 ### Business Outcome
 
@@ -388,6 +388,14 @@ Out of scope:
 - Example includes all required artifacts.
 - Example contains no real private data.
 - Example passes the factory check.
+
+### Progress
+
+- [x] Fake login migration package exists under `examples/fake-login-migration`.
+- [x] Package index links all artifacts.
+- [x] Behavior inventory, parity plan, User Story, Hard Spec, ADR,
+      implementation brief, review/QA and closeout exist.
+- [x] Example passes `factory_check.py`.
 
 ## EPIC-08 - Release Readiness
 
@@ -450,7 +458,7 @@ Out of scope:
 9. [x] Create the Codex skill.
 10. [x] Create traceability harness and hook examples.
 11. [x] Create minimal scripts.
-12. [ ] Create fake login migration example.
+12. [x] Create fake login migration example.
 13. [ ] Run local checks and public-safety review.
 
 ## Global Definition Of Done
