@@ -25,6 +25,9 @@ The core rule:
   presents options, tradeoffs and recommendations.
 - [Factory Workflow](docs/workflow/factory-workflow.md): migration gates from
   intake through closeout.
+- [Agent Roles](docs/agents/README.md): responsibility contracts for
+  orchestrator, discovery, product/spec, architecture, implementation, review
+  and writing roles.
 - [Codex Desktop Setup](docs/setup/codex-desktop.md): recommended local setup
   for using the factory in Codex Desktop.
 

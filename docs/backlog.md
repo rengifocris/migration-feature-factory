@@ -23,7 +23,7 @@ Build a public-safe V0 of Migration Feature Factory:
 | 0 | INIT-00 | Setup | Vision and backlog packet | completed | Created this planning baseline. |
 | 1 | EPIC-01 | Epic | Public repo foundation | in-progress | Repo shape, safety, contribution docs. |
 | 2 | EPIC-02 | Epic | Core migration workflow and templates | completed | Factory gates and artifact contracts. |
-| 3 | EPIC-03 | Epic | Agent role system | draft | Responsibility boundaries and handoff contracts. |
+| 3 | EPIC-03 | Epic | Agent role system | completed | Responsibility boundaries and handoff contracts. |
 | 4 | EPIC-04 | Epic | Codex skill package | draft | Reusable skill and references. |
 | 5 | EPIC-05 | Epic | Traceability harness and hooks | draft | Package index, checks and hook examples. |
 | 6 | EPIC-06 | Epic | Minimal scripts | draft | Scaffold, check and context summary. |
@@ -147,7 +147,7 @@ Out of scope:
 
 ## EPIC-03 - Agent Role System
 
-Status: draft
+Status: completed
 
 ### Business Outcome
 
@@ -188,6 +188,20 @@ Out of scope:
 - Each role has mission, inputs, outputs, allowed decisions, forbidden
   decisions, evidence and blocked protocol.
 - Review roles are distinct: peer review, code review and QA review.
+
+### Progress
+
+- [x] Agent role index exists.
+- [x] Migration orchestrator role exists.
+- [x] Legacy analyst role exists.
+- [x] Product Owner / Business Analyst role exists.
+- [x] Spec owner role exists.
+- [x] Architect role exists.
+- [x] Developer role exists.
+- [x] Peer reviewer role exists.
+- [x] Code reviewer role exists.
+- [x] QA reviewer role exists.
+- [x] Technical writer role exists.
 
 ## EPIC-04 - Codex Skill Package
 
@@ -407,7 +421,7 @@ Out of scope:
 5. [x] Create `docs/workflow/factory-workflow.md`.
 6. [x] Create `templates/core/migration-package-index.md`.
 7. [x] Create remaining V0 migration/product/review templates.
-8. [ ] Create agent role docs.
+8. [x] Create agent role docs.
 9. [ ] Create the Codex skill.
 10. [ ] Create minimal scripts.
 11. [ ] Create fake login migration example.
