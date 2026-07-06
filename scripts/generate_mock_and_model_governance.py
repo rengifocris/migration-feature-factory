@@ -23,6 +23,8 @@ EXCLUDED_DIRS = {
     ".tox",
     ".venv",
     ".codex-venv",
+    "BOOT-INF",
+    "META-INF",
     "__pycache__",
     "build",
     "coverage",
