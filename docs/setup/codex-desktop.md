@@ -75,7 +75,7 @@ The skill should be focused and use progressive disclosure:
 - detailed instructions live in `references/`;
 - scripts are called only when deterministic checks are needed.
 
-Example prompt once the skill exists:
+Example prompt:
 
 ```text
 $migration-feature-factory

@@ -28,6 +28,8 @@ The core rule:
 - [Agent Roles](docs/agents/README.md): responsibility contracts for
   orchestrator, discovery, product/spec, architecture, implementation, review
   and writing roles.
+- [Codex Skill](.agents/skills/migration-feature-factory/SKILL.md): reusable
+  Codex workflow for running the factory from this repo.
 - [Codex Desktop Setup](docs/setup/codex-desktop.md): recommended local setup
   for using the factory in Codex Desktop.
 

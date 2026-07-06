@@ -1,0 +1,4 @@
+interface:
+  display_name: "Migration Feature Factory"
+  short_description: "Preserve behavior while migrating features"
+  default_prompt: "Use $migration-feature-factory to create a behavior-preserving migration package."

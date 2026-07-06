@@ -21,10 +21,10 @@ Build a public-safe V0 of Migration Feature Factory:
 | Order | ID | Type | Title | Status | Notes |
 | --- | --- | --- | --- | --- | --- |
 | 0 | INIT-00 | Setup | Vision and backlog packet | completed | Created this planning baseline. |
-| 1 | EPIC-01 | Epic | Public repo foundation | in-progress | Repo shape, safety, contribution docs. |
+| 1 | EPIC-01 | Epic | Public repo foundation | completed | Repo shape, safety, contribution docs. |
 | 2 | EPIC-02 | Epic | Core migration workflow and templates | completed | Factory gates and artifact contracts. |
 | 3 | EPIC-03 | Epic | Agent role system | completed | Responsibility boundaries and handoff contracts. |
-| 4 | EPIC-04 | Epic | Codex skill package | draft | Reusable skill and references. |
+| 4 | EPIC-04 | Epic | Codex skill package | completed | Reusable skill and references. |
 | 5 | EPIC-05 | Epic | Traceability harness and hooks | draft | Package index, checks and hook examples. |
 | 6 | EPIC-06 | Epic | Minimal scripts | draft | Scaffold, check and context summary. |
 | 7 | EPIC-07 | Epic | Public fake example | draft | Demonstrates end-to-end migration package. |
@@ -82,7 +82,7 @@ Out of scope:
 
 ## EPIC-02 - Core Migration Workflow And Templates
 
-Status: in-progress
+Status: completed
 
 ### Business Outcome
 
@@ -205,7 +205,7 @@ Out of scope:
 
 ## EPIC-04 - Codex Skill Package
 
-Status: draft
+Status: completed
 
 ### Business Outcome
 
@@ -216,7 +216,7 @@ the migration workflow and references.
 
 In scope:
 
-- `skills/migration-feature-factory/SKILL.md`;
+- `.agents/skills/migration-feature-factory/SKILL.md`;
 - reference docs for workflow, behavior parity, change intake and traceability;
 - trigger description with clear boundaries.
 
@@ -239,6 +239,14 @@ Out of scope:
 - Skill has name, description and workflow instructions.
 - Skill references only public-safe docs.
 - Skill states when not to use the factory.
+
+### Progress
+
+- [x] Repo-scoped Codex skill exists.
+- [x] Skill references are split from `SKILL.md`.
+- [x] Skill classifies migration, constraints, improvements, new features,
+      conflicts and Spikes.
+- [x] Skill states when not to use the factory.
 
 ## EPIC-05 - Traceability Harness And Hooks
 
@@ -422,7 +430,7 @@ Out of scope:
 6. [x] Create `templates/core/migration-package-index.md`.
 7. [x] Create remaining V0 migration/product/review templates.
 8. [x] Create agent role docs.
-9. [ ] Create the Codex skill.
+9. [x] Create the Codex skill.
 10. [ ] Create minimal scripts.
 11. [ ] Create fake login migration example.
 12. [ ] Run local checks and public-safety review.
