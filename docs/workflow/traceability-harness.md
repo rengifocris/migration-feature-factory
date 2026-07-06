@@ -135,8 +135,8 @@ EPIC-06.
 | `PreCompact` | `manual|auto` | `scripts/summarize_context.py` | Refresh the context pack before compaction. |
 | `Stop` | none | `scripts/factory_check.py` | Full package consistency check when the turn ends. |
 
-Until EPIC-06 scripts exist, the example commands no-op when the target script
-is missing.
+If a hook runs outside a migration package and no `MIGRATION_FACTORY_PACKAGE`
+environment variable is set, the scripts skip safely.
 
 ## Validation Checklist
 

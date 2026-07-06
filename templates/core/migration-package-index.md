@@ -29,8 +29,10 @@ Last updated: YYYY-MM-DD
 | Legacy Behavior Inventory | draft | `legacy-behavior-inventory.md` | <role> | YYYY-MM-DD |
 | Behavior Parity Plan | draft | `behavior-parity-plan.md` | <role> | YYYY-MM-DD |
 | Change Intake | draft | `change-intake.md` | <role> | YYYY-MM-DD |
+| Epic | not-started | `<path>` | <role> | YYYY-MM-DD |
 | User Story | not-started | `<path>` | <role> | YYYY-MM-DD |
 | Hard Spec | not-started | `<path>` | <role> | YYYY-MM-DD |
+| Spike | not-started | `<path>` | <role> | YYYY-MM-DD |
 | Architecture Decision | not-started | `<path>` | <role> | YYYY-MM-DD |
 | Implementation Brief | not-started | `<path>` | <role> | YYYY-MM-DD |
 | Review / QA | not-started | `<path>` | <role> | YYYY-MM-DD |

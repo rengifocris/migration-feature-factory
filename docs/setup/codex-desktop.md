@@ -115,9 +115,8 @@ Notes:
 - Keep public hook files as examples, not active local policy.
 - Prefer git-root-based paths in hook commands so they work from subfolders.
 - Hook scripts must not print secrets, credentials or private source content.
-- The V0 hook example maps `PostToolUse`, `PreCompact` and `Stop` to the future
-  minimal scripts documented in
-  `docs/workflow/traceability-harness.md`.
+- The V0 hook example maps `PostToolUse`, `PreCompact` and `Stop` to the
+  minimal scripts documented in `docs/workflow/minimal-scripts.md`.
 
 ## Codex Desktop Settings
 
@@ -138,7 +137,7 @@ advanced configuration. Useful areas:
 4. Fill intake, legacy behavior and parity plan before implementation.
 5. Use the decision support contract when architecture or validation choices
    arise.
-6. Run `factory_check.py`.
+6. Run `python3 scripts/factory_check.py <package-path>`.
 7. Update the context pack before long pauses or compaction.
 8. Commit and push only reviewed public-safe changes.
 

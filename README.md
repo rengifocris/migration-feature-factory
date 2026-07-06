@@ -27,6 +27,8 @@ The core rule:
   intake through closeout.
 - [Traceability Harness](docs/workflow/traceability-harness.md): package index,
   traceability rules, change log discipline and optional hook mapping.
+- [Minimal Scripts](docs/workflow/minimal-scripts.md): standard-library
+  scaffold, check and context-summary helpers.
 - [Agent Roles](docs/agents/README.md): responsibility contracts for
   orchestrator, discovery, product/spec, architecture, implementation, review
   and writing roles.
@@ -50,6 +52,16 @@ The core rule:
 - [Implementation Brief](templates/migration/implementation-brief.md)
 - [Review And QA Brief](templates/review/review-qa.md)
 - [Closeout](templates/migration/closeout.md)
+
+## Minimal Scripts
+
+```sh
+python3 scripts/scaffold_feature.py --help
+python3 scripts/factory_check.py --help
+python3 scripts/summarize_context.py --help
+```
+
+See [Minimal Scripts](docs/workflow/minimal-scripts.md) for command examples.
 
 ## Scope
 
