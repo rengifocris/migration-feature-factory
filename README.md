@@ -1,6 +1,6 @@
 # Migration Feature Factory
 
-Status: V0.2 automation layer implemented
+Status: V0.3 technical foundation generation implemented
 
 Migration Feature Factory is a public-safe system for moving legacy features into
 new applications or services while preserving observable behavior and improving
@@ -32,6 +32,9 @@ The core rule:
   intake through closeout.
 - [Automated Discovery](docs/workflow/automated-discovery.md): source scanning,
   package generation and roadmap creation.
+- [Technical Foundation Generation](docs/workflow/technical-foundation-generation.md):
+  architecture blueprint, generation policy, patterns, diagrams and validation
+  gates.
 - [Traceability Harness](docs/workflow/traceability-harness.md): package index,
   traceability rules, change log discipline and optional hook mapping.
 - [Minimal Scripts](docs/workflow/minimal-scripts.md): standard-library
@@ -59,6 +62,7 @@ The core rule:
 - [Implementation Brief](templates/migration/implementation-brief.md)
 - [Review And QA Brief](templates/review/review-qa.md)
 - [Closeout](templates/migration/closeout.md)
+- [Technical Foundation](templates/architecture/technical-foundation.md)
 
 ## Public Example
 
@@ -73,6 +77,7 @@ python3 scripts/scaffold_feature.py --help
 python3 scripts/discover_features.py --help
 python3 scripts/generate_migration_packages.py --help
 python3 scripts/build_migration_roadmap.py --help
+python3 scripts/generate_technical_foundation.py --help
 python3 scripts/factory_check.py --help
 python3 scripts/summarize_context.py --help
 ```
@@ -81,8 +86,9 @@ See [Minimal Scripts](docs/workflow/minimal-scripts.md) for command examples.
 
 ## Release Readiness
 
-V0.1 is released for public GitHub use. V0.2 adds the first automation layer:
-source feature discovery, package generation and roadmap creation.
+V0.1 is released for public GitHub use. V0.2 adds source feature discovery,
+package generation and roadmap creation. V0.3 adds technical foundation and
+architecture blueprint generation.
 
 Evidence:
 
@@ -107,6 +113,8 @@ V0 is Markdown-first:
 - minimal scripts for scaffold, checks and context summaries;
 - automated discovery scripts for source inventory, package generation and
   roadmap creation;
+- technical foundation generation for stack decisions, architecture patterns,
+  code-generation policy and diagrams;
 - a fake public example with no real customer data.
 
 Supabase, semantic search, dashboards and external integrations remain future

@@ -20,6 +20,7 @@ or replace review judgment.
 | `scripts/discover_features.py` | Scan a source repo for likely API, job and listener entry points. |
 | `scripts/generate_migration_packages.py` | Create one draft migration package per discovered source feature. |
 | `scripts/build_migration_roadmap.py` | Build a recommended migration order from discovery output. |
+| `scripts/generate_technical_foundation.py` | Generate technical foundation and architecture blueprint docs. |
 | `scripts/factory_check.py` | Validate required package files, index sections, artifact links and basic public-safety signals. |
 | `scripts/summarize_context.py` | Print or write a compact context summary from the package index. |
 
@@ -92,6 +93,16 @@ python3 scripts/build_migration_roadmap.py \
   --output /tmp/migration-roadmap.md
 ```
 
+Generate a technical foundation:
+
+```sh
+python3 scripts/generate_technical_foundation.py \
+  --inventory-json /tmp/discovery.json \
+  --target-system "Target Service" \
+  --language-policy english \
+  --output /tmp/technical-foundation.md
+```
+
 ## Smoke Examples
 
 Use a temporary directory when testing script behavior without changing the
@@ -121,6 +132,11 @@ python3 scripts/build_migration_roadmap.py \
   --inventory-json "$tmpdir/discovery.json" \
   --packages-root "$tmpdir/packages" \
   --output "$tmpdir/migration-roadmap.md"
+python3 scripts/generate_technical_foundation.py \
+  --inventory-json "$tmpdir/discovery.json" \
+  --target-system "Target Service" \
+  --language-policy english \
+  --output "$tmpdir/technical-foundation.md"
 ```
 
 Fresh scaffolds may produce placeholder warnings until the package is filled.

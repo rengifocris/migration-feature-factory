@@ -1,6 +1,6 @@
 # Migration Feature Factory Backlog
 
-Status: V0.2 automation layer implemented
+Status: V0.3 technical foundation generation implemented
 Language policy: English only
 Owner: local maintainer
 
@@ -30,6 +30,7 @@ Build a public-safe Migration Feature Factory:
 | 7 | EPIC-07 | Epic | Public fake example | completed | Demonstrates end-to-end migration package. |
 | 8 | EPIC-08 | Epic | Release readiness | completed | License, README polish, checks and public safety review. |
 | 9 | EPIC-09 | Epic | Automated discovery and package generation | completed | Source feature inventory, generated packages and roadmap. |
+| 10 | EPIC-10 | Epic | Technical foundation generation | completed | Architecture blueprint, generation policy, patterns and diagrams. |
 
 ## EPIC-01 - Public Repo Foundation
 
@@ -505,6 +506,62 @@ Out of scope:
 - [x] Fake source fixture exists.
 - [x] Generated packages remain discovery drafts.
 
+## EPIC-10 - Technical Foundation Generation
+
+Status: completed
+
+### Business Outcome
+
+Generate architecture and technical foundation specs before package-scale code
+generation or implementation begins.
+
+### Scope
+
+In scope:
+
+- technical foundation template;
+- architecture blueprint generation;
+- stack and company-library detection from target build metadata where
+  available;
+- DTO/model/ACL generation policy;
+- vertical slice and design-pattern recommendations;
+- code style and defensive-programming rules;
+- Mermaid architecture and slice diagrams;
+- validation gates.
+
+Out of scope:
+
+- automatic production code generation;
+- behavior proof without legacy evidence;
+- target architecture decisions without review;
+- replacing company standards or target repo rules.
+
+### Candidate Stories
+
+| ID | Story | Value |
+| --- | --- | --- |
+| US-10.1 | As an architect, I want a generated technical foundation so stack, slicing and pattern decisions are explicit before implementation. | Architecture clarity. |
+| US-10.2 | As a developer, I want DTO/model/ACL generation rules so generated code does not leak into domain logic. | Maintainability. |
+| US-10.3 | As a reviewer, I want diagrams and validation gates so design intent and quality checks are reviewable. | Review quality. |
+| US-10.4 | As a migration orchestrator, I want foundation decisions linked to packages so every feature follows the same rules. | Consistency. |
+
+### Definition of Done
+
+- Technical foundation template exists.
+- Generator script exists.
+- Workflow docs explain the boundary and review gate.
+- Skill and README reference the generator.
+- Generated output includes recommendation, decisions, generation policy, code
+  style, validation gates and diagrams.
+
+### Progress
+
+- [x] `templates/architecture/technical-foundation.md` exists.
+- [x] `scripts/generate_technical_foundation.py` exists.
+- [x] `docs/workflow/technical-foundation-generation.md` exists.
+- [x] README and skill reference the new capability.
+- [x] Generator supports English and Spanish-first output.
+
 ## Spike Candidates
 
 | ID | Question | Timing | Output |
@@ -513,6 +570,7 @@ Out of scope:
 | SP-02 | Should Supabase persistence/search be part of this repo or a separate adapter repo? | After V0 publication. | Adapter architecture decision. |
 | SP-03 | Should hooks be repo-local examples only or also user-level examples? | Before release readiness. | Hook distribution decision. |
 | SP-04 | Should automated discovery move from regex heuristics to language-specific AST adapters? | After V0.2 usage on real repos. | Analyzer adapter decision. |
+| SP-05 | Should the factory generate code scaffolds after technical foundation approval? | After V0.3 target validation. | Code generation boundary decision. |
 
 ## Immediate Next Work Queue
 
@@ -531,7 +589,8 @@ Out of scope:
 13. [x] Run local checks and public-safety review.
 14. [x] Create automated discovery scripts.
 15. [x] Document automated discovery and package generation.
-16. [ ] Run automation against the first private source repo and review the generated packages.
+16. [x] Create technical foundation generator.
+17. [ ] Run automation against the first private source repo and review the generated packages.
 
 ## Global Definition Of Done
 

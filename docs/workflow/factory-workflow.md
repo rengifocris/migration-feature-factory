@@ -17,11 +17,12 @@ architecture.
 2. Legacy behavior discovery
 3. Behavior parity plan
 4. Change intake and classification
-5. Product/spec package
-6. Architecture decision
-7. Implementation brief
-8. Review and QA gates
-9. Closeout
+5. Technical foundation and architecture blueprint
+6. Product/spec package
+7. Architecture decision
+8. Implementation brief
+9. Review and QA gates
+10. Closeout
 ```
 
 V0.2 can create discovery inventories, draft packages and a roadmap
@@ -154,7 +155,28 @@ Rule:
 New features do not belong inside behavior-preserving migration unless they are
 split into their own approved story.
 
-## Gate 5 - Product And Spec Package
+## Gate 5 - Technical Foundation And Architecture Blueprint
+
+Goal: decide the target architecture rules before generating code or packages
+at scale.
+
+Expected artifacts:
+
+- technical foundation spec;
+- architecture blueprint;
+- package/module slicing decision;
+- DTO/model/ACL generation policy;
+- code style and defensive-programming rules;
+- diagrams;
+- validation gates.
+
+Rule:
+
+Generated DTOs and API delegates are allowed at boundaries. Domain models,
+ACLs, mappers, validation behavior and error semantics require engineering
+review because they affect behavior parity and maintainability.
+
+## Gate 6 - Product And Spec Package
 
 Goal: turn the behavior contract into buildable product and technical artifacts.
 
@@ -169,7 +191,7 @@ Rule:
 
 The Hard Spec must satisfy the User Story without expanding scope.
 
-## Gate 6 - Architecture Decision
+## Gate 7 - Architecture Decision
 
 Goal: choose target architecture intentionally.
 
@@ -192,7 +214,7 @@ Rule:
 Use DDD, ports/adapters and patterns only when they protect real boundaries,
 invariants, parity validation or independent evolution.
 
-## Gate 7 - Implementation Brief
+## Gate 8 - Implementation Brief
 
 Goal: give the developer enough context to build without reading the whole
 conversation.
@@ -212,7 +234,7 @@ Rule:
 
 Developer scope is limited by the accepted Hard Spec and implementation brief.
 
-## Gate 8 - Review And QA
+## Gate 9 - Review And QA
 
 Goal: separate review responsibilities.
 
@@ -226,7 +248,7 @@ Rule:
 
 Reviewers can challenge scope but cannot silently mutate it.
 
-## Gate 9 - Closeout
+## Gate 10 - Closeout
 
 Goal: leave a compact, auditable record.
 

@@ -280,6 +280,7 @@ The factory should automate the repetitive parts of migration preparation:
 - generate one migration package per candidate;
 - recommend an initial migration order;
 - keep generated artifacts marked as discovery drafts.
+- generate technical foundation specs before code generation.
 
 The factory should not automatically implement all features. Code migration
 requires reviewed behavior evidence, target architecture boundaries, parity
@@ -308,6 +309,13 @@ scripts/
   build_migration_roadmap.py
 ```
 
+V0.3 adds technical foundation generation:
+
+```text
+scripts/
+  generate_technical_foundation.py
+```
+
 Responsibilities:
 
 - scaffold_feature.py: creates a feature package from templates.
@@ -315,6 +323,8 @@ Responsibilities:
 - generate_migration_packages.py: creates draft packages for discovered
   features.
 - build_migration_roadmap.py: recommends migration order from inventory risk.
+- generate_technical_foundation.py: creates architecture blueprint, generation
+  policy, design-pattern guidance, code-style rules and diagrams.
 - factory_check.py: validates required files, headings, statuses, links and
   traceability expectations.
 - summarize_context.py: creates or updates a compact context pack for long
@@ -348,6 +358,8 @@ V0.1: Markdown-first factory with skills, agents, hook examples and minimal
 scripts.
 
 V0.2: automated source discovery, package generation and roadmap creation.
+
+V0.3: technical foundation and architecture blueprint generation.
 
 V1: CLI quality improvements, richer checks, plugin packaging and more examples.
 
