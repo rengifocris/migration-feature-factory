@@ -13,14 +13,28 @@ The core rule:
 
 ## Start Here
 
+- [Repository Rules](AGENTS.md): durable working agreements for contributors
+  and Codex agents.
 - [Vision](docs/vision.md): product direction, architecture principles, agents,
   skills, hooks, scripts and public/private boundaries.
 - [Backlog](docs/backlog.md): ordered implementation backlog for building the
   factory.
+- [Clean Architecture](docs/architecture/clean-architecture.md): how the
+  factory applies clean architecture, SOLID and screaming architecture.
 - [Decision Support](docs/architecture/decision-support.md): how the factory
   presents options, tradeoffs and recommendations.
+- [Factory Workflow](docs/workflow/factory-workflow.md): migration gates from
+  intake through closeout.
 - [Codex Desktop Setup](docs/setup/codex-desktop.md): recommended local setup
   for using the factory in Codex Desktop.
+
+## First Templates
+
+- [Migration Package Index](templates/core/migration-package-index.md)
+- [Feature Intake](templates/migration/feature-intake.md)
+- [Legacy Behavior Inventory](templates/migration/legacy-behavior-inventory.md)
+- [Behavior Parity Plan](templates/migration/behavior-parity-plan.md)
+- [Change Intake](templates/migration/change-intake.md)
 
 ## Scope
 

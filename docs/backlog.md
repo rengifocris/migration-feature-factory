@@ -21,8 +21,8 @@ Build a public-safe V0 of Migration Feature Factory:
 | Order | ID | Type | Title | Status | Notes |
 | --- | --- | --- | --- | --- | --- |
 | 0 | INIT-00 | Setup | Vision and backlog packet | completed | Created this planning baseline. |
-| 1 | EPIC-01 | Epic | Public repo foundation | draft | Repo shape, safety, contribution docs. |
-| 2 | EPIC-02 | Epic | Core migration workflow and templates | draft | Factory gates and artifact contracts. |
+| 1 | EPIC-01 | Epic | Public repo foundation | in-progress | Repo shape, safety, contribution docs. |
+| 2 | EPIC-02 | Epic | Core migration workflow and templates | in-progress | Factory gates and artifact contracts. |
 | 3 | EPIC-03 | Epic | Agent role system | draft | Responsibility boundaries and handoff contracts. |
 | 4 | EPIC-04 | Epic | Codex skill package | draft | Reusable skill and references. |
 | 5 | EPIC-05 | Epic | Traceability harness and hooks | draft | Package index, checks and hook examples. |
@@ -32,7 +32,7 @@ Build a public-safe V0 of Migration Feature Factory:
 
 ## EPIC-01 - Public Repo Foundation
 
-Status: draft
+Status: in-progress
 
 ### Business Outcome
 
@@ -71,9 +71,18 @@ Out of scope:
 - Codex Desktop setup guidance exists.
 - No real customer data is present.
 
+### Progress
+
+- [x] Root README exists.
+- [x] Repository `AGENTS.md` exists.
+- [x] Clean architecture guidance exists.
+- [x] Codex Desktop setup guidance exists.
+- [ ] Contribution guide exists.
+- [ ] Release/public-safety checklist exists.
+
 ## EPIC-02 - Core Migration Workflow And Templates
 
-Status: draft
+Status: in-progress
 
 ### Business Outcome
 
@@ -118,6 +127,23 @@ Out of scope:
 - Required sections are consistent.
 - Templates include status, sensitivity, scope, evidence and Search Anchors or
   terminology sections where useful.
+
+### Progress
+
+- [x] Factory workflow exists.
+- [x] Migration package index template exists.
+- [x] Feature intake template exists.
+- [x] Legacy behavior inventory template exists.
+- [x] Behavior parity plan template exists.
+- [x] Change intake template exists.
+- [ ] Migration-ready Epic template exists.
+- [ ] Migration-ready User Story template exists.
+- [ ] Migration-ready Hard Spec template exists.
+- [ ] Migration-ready Spike template exists.
+- [ ] Architecture decision template exists.
+- [ ] Implementation brief template exists.
+- [ ] Review / QA template exists.
+- [ ] Closeout template exists.
 
 ## EPIC-03 - Agent Role System
 
@@ -374,18 +400,18 @@ Out of scope:
 
 ## Immediate Next Work Queue
 
-1. Create repository folder structure.
-2. Create `docs/architecture/clean-architecture.md`.
-3. Create `docs/architecture/decision-support.md`.
-4. Create `docs/setup/codex-desktop.md`.
-5. Create `docs/workflow/factory-workflow.md`.
-6. Create `templates/core/migration-package-index.md`.
-7. Create all V0 migration templates.
-8. Create agent role docs.
-9. Create the Codex skill.
-10. Create minimal scripts.
-11. Create fake login migration example.
-12. Run local checks and public-safety review.
+1. [x] Create repository folder structure.
+2. [x] Create `docs/architecture/clean-architecture.md`.
+3. [x] Create `docs/architecture/decision-support.md`.
+4. [x] Create `docs/setup/codex-desktop.md`.
+5. [x] Create `docs/workflow/factory-workflow.md`.
+6. [x] Create `templates/core/migration-package-index.md`.
+7. [ ] Create remaining V0 migration/product/review templates.
+8. [ ] Create agent role docs.
+9. [ ] Create the Codex skill.
+10. [ ] Create minimal scripts.
+11. [ ] Create fake login migration example.
+12. [ ] Run local checks and public-safety review.
 
 ## Global Definition Of Done
 
