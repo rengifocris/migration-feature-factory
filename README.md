@@ -28,13 +28,21 @@ The core rule:
 - [Codex Desktop Setup](docs/setup/codex-desktop.md): recommended local setup
   for using the factory in Codex Desktop.
 
-## First Templates
+## V0 Templates
 
 - [Migration Package Index](templates/core/migration-package-index.md)
 - [Feature Intake](templates/migration/feature-intake.md)
 - [Legacy Behavior Inventory](templates/migration/legacy-behavior-inventory.md)
 - [Behavior Parity Plan](templates/migration/behavior-parity-plan.md)
 - [Change Intake](templates/migration/change-intake.md)
+- [Epic](templates/product/epic.md)
+- [User Story](templates/product/user-story.md)
+- [Hard Spec](templates/product/hard-spec.md)
+- [Spike](templates/product/spike.md)
+- [Architecture Decision](templates/migration/architecture-decision.md)
+- [Implementation Brief](templates/migration/implementation-brief.md)
+- [Review And QA Brief](templates/review/review-qa.md)
+- [Closeout](templates/migration/closeout.md)
 
 ## Scope
 
