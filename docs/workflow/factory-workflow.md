@@ -18,11 +18,12 @@ architecture.
 3. Behavior parity plan
 4. Change intake and classification
 5. Technical foundation and architecture blueprint
-6. Product/spec package
-7. Architecture decision
-8. Implementation brief
-9. Review and QA gates
-10. Closeout
+6. Mock server, synthetic data and model governance
+7. Product/spec package
+8. Architecture decision
+9. Implementation brief
+10. Review and QA gates
+11. Closeout
 ```
 
 V0.2 can create discovery inventories, draft packages and a roadmap
@@ -176,7 +177,26 @@ Generated DTOs and API delegates are allowed at boundaries. Domain models,
 ACLs, mappers, validation behavior and error semantics require engineering
 review because they affect behavior parity and maintainability.
 
-## Gate 6 - Product And Spec Package
+## Gate 6 - Mock Server, Synthetic Data And Model Governance
+
+Goal: define test doubles, synthetic fixtures and model/client boundaries before
+implementation begins.
+
+Expected artifacts:
+
+- mock-server strategy;
+- synthetic scenario matrix for happy, edge and bad cases;
+- fixture governance rules;
+- raw/non-enriched, canonical and enriched model policy;
+- client, adapter/ACL, mapper and validator governance;
+- code-context signal table when source roots are scanned.
+
+Rule:
+
+Mock servers and synthetic data support parity evidence. They do not replace
+legacy behavior discovery, approved specs or target platform review.
+
+## Gate 7 - Product And Spec Package
 
 Goal: turn the behavior contract into buildable product and technical artifacts.
 
@@ -191,7 +211,7 @@ Rule:
 
 The Hard Spec must satisfy the User Story without expanding scope.
 
-## Gate 7 - Architecture Decision
+## Gate 8 - Architecture Decision
 
 Goal: choose target architecture intentionally.
 
@@ -214,7 +234,7 @@ Rule:
 Use DDD, ports/adapters and patterns only when they protect real boundaries,
 invariants, parity validation or independent evolution.
 
-## Gate 8 - Implementation Brief
+## Gate 9 - Implementation Brief
 
 Goal: give the developer enough context to build without reading the whole
 conversation.
@@ -234,7 +254,7 @@ Rule:
 
 Developer scope is limited by the accepted Hard Spec and implementation brief.
 
-## Gate 9 - Review And QA
+## Gate 10 - Review And QA
 
 Goal: separate review responsibilities.
 
@@ -248,7 +268,7 @@ Rule:
 
 Reviewers can challenge scope but cannot silently mutate it.
 
-## Gate 10 - Closeout
+## Gate 11 - Closeout
 
 Goal: leave a compact, auditable record.
 

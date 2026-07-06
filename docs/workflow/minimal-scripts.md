@@ -21,6 +21,7 @@ or replace review judgment.
 | `scripts/generate_migration_packages.py` | Create one draft migration package per discovered source feature. |
 | `scripts/build_migration_roadmap.py` | Build a recommended migration order from discovery output. |
 | `scripts/generate_technical_foundation.py` | Generate technical foundation and architecture blueprint docs. |
+| `scripts/generate_mock_and_model_governance.py` | Generate mock-server, synthetic-data and model-governance docs. |
 | `scripts/factory_check.py` | Validate required package files, index sections, artifact links and basic public-safety signals. |
 | `scripts/summarize_context.py` | Print or write a compact context summary from the package index. |
 
@@ -103,6 +104,17 @@ python3 scripts/generate_technical_foundation.py \
   --output /tmp/technical-foundation.md
 ```
 
+Generate mock-server, synthetic-data and model-governance strategy:
+
+```sh
+python3 scripts/generate_mock_and_model_governance.py \
+  --inventory-json /tmp/discovery.json \
+  --target-system "Target Service" \
+  --language-policy english \
+  --code-root examples/fake-source-service \
+  --output /tmp/mock-server-and-model-governance.md
+```
+
 ## Smoke Examples
 
 Use a temporary directory when testing script behavior without changing the
@@ -137,6 +149,12 @@ python3 scripts/generate_technical_foundation.py \
   --target-system "Target Service" \
   --language-policy english \
   --output "$tmpdir/technical-foundation.md"
+python3 scripts/generate_mock_and_model_governance.py \
+  --inventory-json "$tmpdir/discovery.json" \
+  --target-system "Target Service" \
+  --language-policy english \
+  --code-root examples/fake-source-service \
+  --output "$tmpdir/mock-server-and-model-governance.md"
 ```
 
 Fresh scaffolds may produce placeholder warnings until the package is filled.

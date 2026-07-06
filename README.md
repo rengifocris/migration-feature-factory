@@ -1,6 +1,6 @@
 # Migration Feature Factory
 
-Status: V0.3 technical foundation generation implemented
+Status: V0.4 mock, data and model governance implemented
 
 Migration Feature Factory is a public-safe system for moving legacy features into
 new applications or services while preserving observable behavior and improving
@@ -35,6 +35,9 @@ The core rule:
 - [Technical Foundation Generation](docs/workflow/technical-foundation-generation.md):
   architecture blueprint, generation policy, patterns, diagrams and validation
   gates.
+- [Mock Server And Model Governance](docs/workflow/mock-server-and-model-governance.md):
+  mock-server strategy, synthetic data, code-context signals and model/client
+  governance.
 - [Traceability Harness](docs/workflow/traceability-harness.md): package index,
   traceability rules, change log discipline and optional hook mapping.
 - [Minimal Scripts](docs/workflow/minimal-scripts.md): standard-library
@@ -63,6 +66,9 @@ The core rule:
 - [Review And QA Brief](templates/review/review-qa.md)
 - [Closeout](templates/migration/closeout.md)
 - [Technical Foundation](templates/architecture/technical-foundation.md)
+- [Model Governance](templates/architecture/model-governance.md)
+- [Mock Server Strategy](templates/testing/mock-server-strategy.md)
+- [Synthetic Test Data Plan](templates/testing/synthetic-test-data-plan.md)
 
 ## Public Example
 
@@ -78,6 +84,7 @@ python3 scripts/discover_features.py --help
 python3 scripts/generate_migration_packages.py --help
 python3 scripts/build_migration_roadmap.py --help
 python3 scripts/generate_technical_foundation.py --help
+python3 scripts/generate_mock_and_model_governance.py --help
 python3 scripts/factory_check.py --help
 python3 scripts/summarize_context.py --help
 ```
@@ -88,7 +95,8 @@ See [Minimal Scripts](docs/workflow/minimal-scripts.md) for command examples.
 
 V0.1 is released for public GitHub use. V0.2 adds source feature discovery,
 package generation and roadmap creation. V0.3 adds technical foundation and
-architecture blueprint generation.
+architecture blueprint generation. V0.4 adds mock-server, synthetic-data and
+model-governance generation.
 
 Evidence:
 
@@ -115,6 +123,8 @@ V0 is Markdown-first:
   roadmap creation;
 - technical foundation generation for stack decisions, architecture patterns,
   code-generation policy and diagrams;
+- mock-server, synthetic-data and model-governance generation for external
+  clients, enrichment flows, DTO boundaries, mappers and fixtures;
 - a fake public example with no real customer data.
 
 Supabase, semantic search, dashboards and external integrations remain future

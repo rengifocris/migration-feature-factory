@@ -1,6 +1,6 @@
 # Migration Feature Factory Backlog
 
-Status: V0.3 technical foundation generation implemented
+Status: V0.4 mock, data and model governance implemented
 Language policy: English only
 Owner: local maintainer
 
@@ -31,6 +31,7 @@ Build a public-safe Migration Feature Factory:
 | 8 | EPIC-08 | Epic | Release readiness | completed | License, README polish, checks and public safety review. |
 | 9 | EPIC-09 | Epic | Automated discovery and package generation | completed | Source feature inventory, generated packages and roadmap. |
 | 10 | EPIC-10 | Epic | Technical foundation generation | completed | Architecture blueprint, generation policy, patterns and diagrams. |
+| 11 | EPIC-11 | Epic | Mock server, synthetic data and model governance | completed | Mock strategy, happy/edge/bad synthetic data and raw/enriched model governance. |
 
 ## EPIC-01 - Public Repo Foundation
 
@@ -562,6 +563,66 @@ Out of scope:
 - [x] README and skill reference the new capability.
 - [x] Generator supports English and Spanish-first output.
 
+## EPIC-11 - Mock Server, Synthetic Data And Model Governance
+
+Status: completed
+
+### Business Outcome
+
+Generate the testing and model-governance foundation needed before migrating
+features that depend on external clients, enrichment flows, generated DTOs,
+mappers, validators or canonical records.
+
+### Scope
+
+In scope:
+
+- mock-server strategy template;
+- synthetic test data plan template;
+- model-governance template;
+- generator for mock-server, synthetic-data and model-governance docs;
+- optional code-context signal scanning that stores terms and anchors, not code
+  excerpts;
+- Spanish-first and English output support;
+- workflow docs and skill/README references.
+
+Out of scope:
+
+- automatic production code generation;
+- choosing a company-specific mock-server tool without platform approval;
+- storing production or private payloads;
+- claiming parity without tests and review evidence;
+- making the public factory specific to one company or domain.
+
+### Candidate Stories
+
+| ID | Story | Value |
+| --- | --- | --- |
+| US-11.1 | As a QA reviewer, I want a mock-server strategy so integration and parity tests can simulate happy, edge and bad upstream behavior. | Regression control. |
+| US-11.2 | As a developer, I want synthetic fixture governance so tests are deterministic, fake and traceable. | Maintainability. |
+| US-11.3 | As an architect, I want model governance so generated DTOs, raw records, enriched records, clients, ACLs and mappers have explicit boundaries. | Architecture clarity. |
+| US-11.4 | As a migration orchestrator, I want code-context signals so source terms and anchors can seed model decisions without copying private source code. | Safe automation. |
+
+### Definition of Done
+
+- Templates exist for mock strategy, synthetic data and model governance.
+- Generator script exists and supports inventory JSON plus optional code-root
+  scanning.
+- Workflow docs explain boundaries, defaults, commands and review gates.
+- README, backlog, vision, factory workflow, minimal scripts and skill reference
+  the capability.
+- Generated artifacts remain drafts until platform, architecture and QA review
+  accept them.
+
+### Progress
+
+- [x] `templates/testing/mock-server-strategy.md` exists.
+- [x] `templates/testing/synthetic-test-data-plan.md` exists.
+- [x] `templates/architecture/model-governance.md` exists.
+- [x] `scripts/generate_mock_and_model_governance.py` exists.
+- [x] `docs/workflow/mock-server-and-model-governance.md` exists.
+- [x] README, vision, skill and minimal script docs reference the new capability.
+
 ## Spike Candidates
 
 | ID | Question | Timing | Output |
@@ -571,6 +632,7 @@ Out of scope:
 | SP-03 | Should hooks be repo-local examples only or also user-level examples? | Before release readiness. | Hook distribution decision. |
 | SP-04 | Should automated discovery move from regex heuristics to language-specific AST adapters? | After V0.2 usage on real repos. | Analyzer adapter decision. |
 | SP-05 | Should the factory generate code scaffolds after technical foundation approval? | After V0.3 target validation. | Code generation boundary decision. |
+| SP-06 | Should the mock/model generator emit tool-specific fixtures for approved stacks? | After V0.4 target validation. | Mock adapter generation decision. |
 
 ## Immediate Next Work Queue
 
@@ -590,7 +652,8 @@ Out of scope:
 14. [x] Create automated discovery scripts.
 15. [x] Document automated discovery and package generation.
 16. [x] Create technical foundation generator.
-17. [ ] Run automation against the first private source repo and review the generated packages.
+17. [x] Create mock-server, synthetic-data and model-governance generator.
+18. [ ] Run automation against the first private source repo and review the generated packages.
 
 ## Global Definition Of Done
 

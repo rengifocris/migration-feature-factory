@@ -10,7 +10,9 @@ Automated discovery turns a source repository into a migration starting point:
 1. discover source entry points;
 2. create a source feature inventory;
 3. generate one draft migration package per discovered feature;
-4. build a recommended migration roadmap.
+4. build a recommended migration roadmap;
+5. optionally generate technical foundation and mock/model-governance strategy
+   from the inventory and target context.
 
 This is automation for discovery and planning. It is not unattended code
 migration.
@@ -47,6 +49,8 @@ source repo
   -> packages/<feature-slug>/
   -> build_migration_roadmap.py
   -> migration-roadmap.md
+  -> generate_technical_foundation.py
+  -> generate_mock_and_model_governance.py
 ```
 
 ## Supported Discovery Heuristics
@@ -112,6 +116,16 @@ python3 scripts/build_migration_roadmap.py \
   --inventory-json /tmp/discovery.json \
   --packages-root /tmp/migration-packages \
   --output /tmp/migration-roadmap.md
+```
+
+Generate mock/model governance after the roadmap:
+
+```sh
+python3 scripts/generate_mock_and_model_governance.py \
+  --inventory-json /tmp/discovery.json \
+  --target-system "Target Service" \
+  --code-root examples/fake-source-service \
+  --output /tmp/mock-server-and-model-governance.md
 ```
 
 One command can also scan and create packages:

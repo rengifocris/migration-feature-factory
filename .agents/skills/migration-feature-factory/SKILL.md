@@ -18,6 +18,9 @@ Observable behavior changes require a separate approved story.
 - Read `../../../docs/workflow/technical-foundation-generation.md` when the
   user wants architecture, design-pattern, DTO/model/ACL or code-generation
   foundation specs.
+- Read `../../../docs/workflow/mock-server-and-model-governance.md` when the
+  user needs mock servers, synthetic data, enrichment flows, clients, mappers,
+  raw/enriched records or model-governance decisions.
 - Read `references/factory-workflow.md` to run the skill operating loop.
 - Read `references/behavior-parity.md` when behavior equivalence or validation
   evidence is involved.
@@ -42,17 +45,20 @@ Observable behavior changes require a separate approved story.
 3. Generate or update the technical foundation when architecture, stack,
    company libraries, vertical slicing, DTOs, models, ACLs, mappers, validators
    or code style are material.
-4. Create or update the migration package index before adding standalone
+4. Generate or update mock-server, synthetic-data and model-governance strategy
+   when clients, enrichment, generated DTOs, raw/enriched records, mappers or
+   validation fixtures are material.
+5. Create or update the migration package index before adding standalone
    artifacts.
-5. Capture intake, legacy behavior and parity evidence before implementation
+6. Capture intake, legacy behavior and parity evidence before implementation
    planning.
-6. Convert the validated behavior contract into product/spec artifacts.
-7. Choose architecture proportionally: local cleanup, module cleanup, boundary
+7. Convert the validated behavior contract into product/spec artifacts.
+8. Choose architecture proportionally: local cleanup, module cleanup, boundary
    cleanup, domain model or clean architecture.
-8. Produce an implementation brief only after scope, non-goals, behavior
+9. Produce an implementation brief only after scope, non-goals, behavior
    contract, architecture boundaries and validation evidence are clear.
-9. Keep peer review, code review and QA review separate.
-10. Close with validation evidence, residual risk, decisions and a compact
+10. Keep peer review, code review and QA review separate.
+11. Close with validation evidence, residual risk, decisions and a compact
    continuation context.
 
 ## Decision Discipline

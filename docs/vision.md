@@ -59,6 +59,9 @@ equivalent unless a separate new-feature story approves the change.
 - Provide agent roles with clear responsibilities and blocked protocols.
 - Add optional hooks and scripts that enforce traceability and automate safe
   discovery without building a heavy platform.
+- Generate mock-server, synthetic-data and model-governance strategies when
+  migrations depend on clients, enrichment, DTO boundaries, mappers or
+  canonical records.
 - Stay public-safe by avoiding real customer data.
 
 ## Non-Goals
@@ -164,14 +167,16 @@ Each migrated feature moves through these gates:
    permissions, side effects and integrations.
 3. Behavior parity plan: define tests and evidence that prove behavior stayed
    equivalent.
-4. Spec package: create or update Epic, User Story, Hard Spec and Spikes where
+4. Mock/data/model governance: define mock-server boundaries, synthetic happy,
+   edge and bad cases, raw/enriched model rules and client/mapper governance.
+5. Spec package: create or update Epic, User Story, Hard Spec and Spikes where
    needed.
-5. Architecture decision: document target boundaries, company constraints,
+6. Architecture decision: document target boundaries, company constraints,
    patterns and explicit non-patterns.
-6. Implementation brief: hand developers a scoped packet with boundaries and
+7. Implementation brief: hand developers a scoped packet with boundaries and
    validation requirements.
-7. Review gates: peer review, code review and QA review.
-8. Closeout: summarize changed files, unchanged behavior, validation evidence,
+8. Review gates: peer review, code review and QA review.
+9. Closeout: summarize changed files, unchanged behavior, validation evidence,
    residual risk and follow-up work.
 
 ## Change Intake Router
@@ -281,6 +286,8 @@ The factory should automate the repetitive parts of migration preparation:
 - recommend an initial migration order;
 - keep generated artifacts marked as discovery drafts.
 - generate technical foundation specs before code generation.
+- generate mock-server, synthetic-data and model-governance strategy before
+  implementation when clients, enrichment or model boundaries matter.
 
 The factory should not automatically implement all features. Code migration
 requires reviewed behavior evidence, target architecture boundaries, parity
@@ -316,6 +323,13 @@ scripts/
   generate_technical_foundation.py
 ```
 
+V0.4 adds mock-server, synthetic-data and model-governance generation:
+
+```text
+scripts/
+  generate_mock_and_model_governance.py
+```
+
 Responsibilities:
 
 - scaffold_feature.py: creates a feature package from templates.
@@ -325,6 +339,9 @@ Responsibilities:
 - build_migration_roadmap.py: recommends migration order from inventory risk.
 - generate_technical_foundation.py: creates architecture blueprint, generation
   policy, design-pattern guidance, code-style rules and diagrams.
+- generate_mock_and_model_governance.py: creates mock-server strategy,
+  synthetic scenario matrix, model-governance policy and code-context signal
+  table without copying source excerpts.
 - factory_check.py: validates required files, headings, statuses, links and
   traceability expectations.
 - summarize_context.py: creates or updates a compact context pack for long
@@ -360,6 +377,8 @@ scripts.
 V0.2: automated source discovery, package generation and roadmap creation.
 
 V0.3: technical foundation and architecture blueprint generation.
+
+V0.4: mock-server, synthetic-data and model-governance generation.
 
 V1: CLI quality improvements, richer checks, plugin packaging and more examples.
 

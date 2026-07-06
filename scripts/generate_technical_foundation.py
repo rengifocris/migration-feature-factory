@@ -36,6 +36,13 @@ def load_inventory(path: Path) -> dict[str, object]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def display_path(path: Path) -> str:
+    try:
+        return path.resolve().relative_to(Path.cwd().resolve()).as_posix()
+    except ValueError:
+        return path.name
+
+
 def pom_text(element: ET.Element | None, default: str = "not detected") -> str:
     return element.text.strip() if element is not None and element.text else default
 
@@ -102,7 +109,6 @@ def company_libraries(pom: dict[str, object]) -> list[str]:
         and (
             "arch-ram" in item
             or ".lib." in item
-            or item.startswith("com.mapfre.")
         )
     ]
 
@@ -398,7 +404,7 @@ def build_document(args: argparse.Namespace) -> str:
         f"Language policy: {args.language_policy}",
         f"Sensitivity: {args.sensitivity}",
         f"Related roadmap: `{args.roadmap_path}`",
-        f"Related discovery inventory: `{args.inventory_json.as_posix()}`",
+        f"Related discovery inventory: `{display_path(args.inventory_json)}`",
         "",
         "## Purpose",
         "",

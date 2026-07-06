@@ -29,6 +29,9 @@ Last updated: YYYY-MM-DD
 | Legacy Behavior Inventory | draft | `legacy-behavior-inventory.md` | <role> | YYYY-MM-DD |
 | Behavior Parity Plan | draft | `behavior-parity-plan.md` | <role> | YYYY-MM-DD |
 | Change Intake | draft | `change-intake.md` | <role> | YYYY-MM-DD |
+| Mock Server Strategy | not-started | `<path>` | <role> | YYYY-MM-DD |
+| Synthetic Test Data Plan | not-started | `<path>` | <role> | YYYY-MM-DD |
+| Model Governance | not-started | `<path>` | <role> | YYYY-MM-DD |
 | Epic | not-started | `<path>` | <role> | YYYY-MM-DD |
 | User Story | not-started | `<path>` | <role> | YYYY-MM-DD |
 | Hard Spec | not-started | `<path>` | <role> | YYYY-MM-DD |
@@ -98,6 +101,10 @@ Status values: `pending`, `planned`, `validated`, `gap`, `accepted-risk`,
 - Every acceptance criterion maps to Hard Spec coverage.
 - Every Hard Spec requirement maps to validation evidence or accepted risk.
 - Every architecture constraint maps to a decision or implementation boundary.
+- Every mock scenario maps to a behavior, fixture or evidence ID when mocks are
+  used.
+- Every generated DTO, curated model, client, mapper or enrichment rule maps to
+  a model-governance decision when model boundaries are material.
 - Every change request is classified and recorded in the change log.
 - Superseded IDs are not reused.
 
@@ -109,6 +116,10 @@ Status values: `pending`, `planned`, `validated`, `gap`, `accepted-risk`,
 - [ ] Every Hard Spec requirement maps to validation evidence.
 - [ ] Every architecture constraint maps to a decision or implementation
       boundary.
+- [ ] Every mock scenario maps to a behavior, fixture or evidence ID when mocks
+      are used.
+- [ ] Every generated DTO, curated model, client, mapper or enrichment rule maps
+      to a model-governance decision when model boundaries are material.
 - [ ] Every change request is classified.
 - [ ] Every blocker has an owner and next action.
 - [ ] Closeout states what changed, what did not change and residual risk.
