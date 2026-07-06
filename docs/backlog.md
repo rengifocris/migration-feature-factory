@@ -1,20 +1,20 @@
 # Migration Feature Factory Backlog
 
-Status: V0 release-ready
+Status: V0.2 automation layer implemented
 Language policy: English only
 Owner: local maintainer
 
 ## Current Objective
 
-Build a public-safe V0 of Migration Feature Factory:
+Build a public-safe Migration Feature Factory:
 
 - Markdown-first;
 - clean architecture and SOLID principles;
 - agents, skills and optional hooks;
-- minimal scripts;
+- minimal scripts plus safe automation;
 - fake example only;
 - no private data;
-- no Supabase dependency in V0.
+- no Supabase dependency in the current core.
 
 ## Delivery Order
 
@@ -29,6 +29,7 @@ Build a public-safe V0 of Migration Feature Factory:
 | 6 | EPIC-06 | Epic | Minimal scripts | completed | Scaffold, check and context summary. |
 | 7 | EPIC-07 | Epic | Public fake example | completed | Demonstrates end-to-end migration package. |
 | 8 | EPIC-08 | Epic | Release readiness | completed | License, README polish, checks and public safety review. |
+| 9 | EPIC-09 | Epic | Automated discovery and package generation | completed | Source feature inventory, generated packages and roadmap. |
 
 ## EPIC-01 - Public Repo Foundation
 
@@ -448,6 +449,62 @@ Out of scope:
 - [x] Local smoke checks pass.
 - [x] Next release steps are documented.
 
+## EPIC-09 - Automated Discovery And Package Generation
+
+Status: completed
+
+### Business Outcome
+
+Turn "migrate all features from this source repo" into an actionable migration
+roadmap with one draft package per discovered source feature.
+
+### Scope
+
+In scope:
+
+- source feature discovery for common API, job and listener entry points;
+- source feature inventory output;
+- draft package generation for every discovered candidate;
+- generated discovery seed sections;
+- migration roadmap with recommended ordering;
+- fake public source fixture for smoke validation.
+
+Out of scope:
+
+- automatic behavior proof;
+- automatic code migration;
+- target architecture selection without review;
+- production readiness claims;
+- storing private source excerpts in public artifacts.
+
+### Candidate Stories
+
+| ID | Story | Value |
+| --- | --- | --- |
+| US-09.1 | As a migration orchestrator, I want source feature discovery so a large legacy repo can be converted into migration candidates quickly. | Speed. |
+| US-09.2 | As a spec owner, I want one draft package per discovered feature so each slice has a place for behavior, parity and decisions. | Traceability. |
+| US-09.3 | As a reviewer, I want a generated roadmap so migration order starts with lower-risk, easier-to-validate slices. | Risk control. |
+| US-09.4 | As a maintainer, I want generated artifacts to avoid source excerpts so the public factory remains safe. | Public safety. |
+
+### Definition of Done
+
+- Discovery script exists and supports Markdown and JSON output.
+- Package generation script creates draft packages from discovery output.
+- Roadmap script creates a recommended migration order.
+- Automation workflow is documented.
+- README, vision, skill and minimal script docs reference the automation layer.
+- Fake source fixture validates the workflow without private data.
+
+### Progress
+
+- [x] `scripts/discover_features.py` exists.
+- [x] `scripts/generate_migration_packages.py` exists.
+- [x] `scripts/build_migration_roadmap.py` exists.
+- [x] `docs/workflow/automated-discovery.md` exists.
+- [x] README and vision describe the automation boundary.
+- [x] Fake source fixture exists.
+- [x] Generated packages remain discovery drafts.
+
 ## Spike Candidates
 
 | ID | Question | Timing | Output |
@@ -455,6 +512,7 @@ Out of scope:
 | SP-01 | Should the factory be packaged as a Codex plugin after V0? | After skill works locally. | Plugin packaging decision. |
 | SP-02 | Should Supabase persistence/search be part of this repo or a separate adapter repo? | After V0 publication. | Adapter architecture decision. |
 | SP-03 | Should hooks be repo-local examples only or also user-level examples? | Before release readiness. | Hook distribution decision. |
+| SP-04 | Should automated discovery move from regex heuristics to language-specific AST adapters? | After V0.2 usage on real repos. | Analyzer adapter decision. |
 
 ## Immediate Next Work Queue
 
@@ -471,11 +529,14 @@ Out of scope:
 11. [x] Create minimal scripts.
 12. [x] Create fake login migration example.
 13. [x] Run local checks and public-safety review.
+14. [x] Create automated discovery scripts.
+15. [x] Document automated discovery and package generation.
+16. [ ] Run automation against the first private source repo and review the generated packages.
 
 ## Global Definition Of Done
 
-- V0 artifacts exist and are internally linked.
+- Core artifacts exist and are internally linked.
 - Factory check passes on the fake example.
 - README explains usage and boundaries.
 - No private or customer-specific data is present.
-- No GitHub publication occurs without explicit user approval.
+- Public GitHub publication only contains reviewed public-safe content.

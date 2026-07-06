@@ -1,6 +1,6 @@
 # Migration Feature Factory
 
-Status: V0 release-ready
+Status: V0.2 automation layer implemented
 
 Migration Feature Factory is a public-safe system for moving legacy features into
 new applications or services while preserving observable behavior and improving
@@ -30,6 +30,8 @@ The core rule:
   presents options, tradeoffs and recommendations.
 - [Factory Workflow](docs/workflow/factory-workflow.md): migration gates from
   intake through closeout.
+- [Automated Discovery](docs/workflow/automated-discovery.md): source scanning,
+  package generation and roadmap creation.
 - [Traceability Harness](docs/workflow/traceability-harness.md): package index,
   traceability rules, change log discipline and optional hook mapping.
 - [Minimal Scripts](docs/workflow/minimal-scripts.md): standard-library
@@ -68,6 +70,9 @@ The core rule:
 
 ```sh
 python3 scripts/scaffold_feature.py --help
+python3 scripts/discover_features.py --help
+python3 scripts/generate_migration_packages.py --help
+python3 scripts/build_migration_roadmap.py --help
 python3 scripts/factory_check.py --help
 python3 scripts/summarize_context.py --help
 ```
@@ -76,7 +81,8 @@ See [Minimal Scripts](docs/workflow/minimal-scripts.md) for command examples.
 
 ## Release Readiness
 
-V0 is release-ready for public GitHub use.
+V0.1 is released for public GitHub use. V0.2 adds the first automation layer:
+source feature discovery, package generation and roadmap creation.
 
 Evidence:
 
@@ -99,10 +105,12 @@ V0 is Markdown-first:
 - a Codex skill;
 - optional Codex hook examples;
 - minimal scripts for scaffold, checks and context summaries;
+- automated discovery scripts for source inventory, package generation and
+  roadmap creation;
 - a fake public example with no real customer data.
 
-Supabase, semantic search, dashboards and external integrations are future
-adapters, not V0 dependencies.
+Supabase, semantic search, dashboards and external integrations remain future
+adapters, not current dependencies.
 
 ## Operating Principle
 

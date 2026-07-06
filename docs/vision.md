@@ -57,8 +57,8 @@ equivalent unless a separate new-feature story approves the change.
 - Produce Epic, User Story, Hard Spec and review-ready implementation packets.
 - Keep decisions, evidence and progress linked.
 - Provide agent roles with clear responsibilities and blocked protocols.
-- Add optional hooks and scripts that enforce traceability without building a
-  heavy platform.
+- Add optional hooks and scripts that enforce traceability and automate safe
+  discovery without building a heavy platform.
 - Stay public-safe by avoiding real customer data.
 
 ## Non-Goals
@@ -271,9 +271,26 @@ Useful Codex hook examples:
 Public hook files should be examples only. Users must explicitly review and
 trust hooks in their own Codex environment.
 
+## Automation Layer
+
+The factory should automate the repetitive parts of migration preparation:
+
+- discover source entry points;
+- create a source feature inventory;
+- generate one migration package per candidate;
+- recommend an initial migration order;
+- keep generated artifacts marked as discovery drafts.
+
+The factory should not automatically implement all features. Code migration
+requires reviewed behavior evidence, target architecture boundaries, parity
+strategy and an implementation brief.
+
+This keeps the factory useful for large repos without turning it into a blind
+rewrite tool.
+
 ## Minimal Scripts
 
-V0 needs only three scripts:
+V0.1 needed only three scripts:
 
 ```text
 scripts/
@@ -282,9 +299,22 @@ scripts/
   summarize_context.py
 ```
 
+V0.2 adds the first automation scripts:
+
+```text
+scripts/
+  discover_features.py
+  generate_migration_packages.py
+  build_migration_roadmap.py
+```
+
 Responsibilities:
 
 - scaffold_feature.py: creates a feature package from templates.
+- discover_features.py: scans source entry points and writes an inventory.
+- generate_migration_packages.py: creates draft packages for discovered
+  features.
+- build_migration_roadmap.py: recommends migration order from inventory risk.
 - factory_check.py: validates required files, headings, statuses, links and
   traceability expectations.
 - summarize_context.py: creates or updates a compact context pack for long
@@ -314,8 +344,10 @@ Private repos contain real work:
 
 ## Roadmap
 
-V0: Markdown-first factory with skills, agents, hooks examples and minimal
+V0.1: Markdown-first factory with skills, agents, hook examples and minimal
 scripts.
+
+V0.2: automated source discovery, package generation and roadmap creation.
 
 V1: CLI quality improvements, richer checks, plugin packaging and more examples.
 

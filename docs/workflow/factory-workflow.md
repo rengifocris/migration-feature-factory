@@ -12,6 +12,7 @@ architecture.
 ## Workflow Summary
 
 ```text
+0. Optional automated discovery and package generation
 1. Intake
 2. Legacy behavior discovery
 3. Behavior parity plan
@@ -23,7 +24,31 @@ architecture.
 9. Closeout
 ```
 
-The first V0 slice covers steps 1 through 4 plus the package index.
+V0.2 can create discovery inventories, draft packages and a roadmap
+automatically. These generated artifacts still enter Gate 1 as drafts.
+
+## Gate 0 - Optional Automated Discovery
+
+Goal: create a starting inventory and package set from source repository entry
+points.
+
+Inputs:
+
+- source repository path;
+- source system name;
+- target system name;
+- output root for generated packages.
+
+Output:
+
+- source feature inventory;
+- one draft migration package per discovered candidate;
+- migration roadmap.
+
+Rule:
+
+Generated packages are discovery drafts. They do not approve implementation and
+do not prove behavior parity.
 
 ## Gate 1 - Intake
 

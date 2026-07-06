@@ -13,6 +13,8 @@ Observable behavior changes require a separate approved story.
 ## Load Only What The Task Needs
 
 - Read `../../../docs/workflow/factory-workflow.md` for the full gate model.
+- Read `../../../docs/workflow/automated-discovery.md` when the user wants the
+  factory to discover many features or generate packages from source code.
 - Read `references/factory-workflow.md` to run the skill operating loop.
 - Read `references/behavior-parity.md` when behavior equivalence or validation
   evidence is involved.
@@ -32,17 +34,19 @@ Observable behavior changes require a separate approved story.
 
 1. Classify the request as migration, migration plus constraint, new feature,
    improvement or Spike.
-2. Create or update the migration package index before adding standalone
+2. If the user asks for automatic preparation across many features, run
+   discovery and generate draft packages before selecting implementation scope.
+3. Create or update the migration package index before adding standalone
    artifacts.
-3. Capture intake, legacy behavior and parity evidence before implementation
+4. Capture intake, legacy behavior and parity evidence before implementation
    planning.
-4. Convert the validated behavior contract into product/spec artifacts.
-5. Choose architecture proportionally: local cleanup, module cleanup, boundary
+5. Convert the validated behavior contract into product/spec artifacts.
+6. Choose architecture proportionally: local cleanup, module cleanup, boundary
    cleanup, domain model or clean architecture.
-6. Produce an implementation brief only after scope, non-goals, behavior
+7. Produce an implementation brief only after scope, non-goals, behavior
    contract, architecture boundaries and validation evidence are clear.
-7. Keep peer review, code review and QA review separate.
-8. Close with validation evidence, residual risk, decisions and a compact
+8. Keep peer review, code review and QA review separate.
+9. Close with validation evidence, residual risk, decisions and a compact
    continuation context.
 
 ## Decision Discipline
