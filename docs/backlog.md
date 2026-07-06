@@ -62,11 +62,13 @@ Out of scope:
 | US-01.1 | As a maintainer, I want a clear README so newcomers understand the factory purpose and V0 scope. | Public clarity. |
 | US-01.2 | As a contributor, I want public-safety rules so no private data is added by mistake. | Safety. |
 | US-01.3 | As an architect, I want clean architecture and SOLID docs so the repo has design discipline from the start. | Maintainability. |
+| US-01.4 | As a Codex Desktop user, I want setup guidance so I can use the factory from the app without guessing where skills, hooks and instructions live. | Adoption. |
 
 ### Definition of Done
 
 - README links to vision, backlog and future docs.
 - Public/private boundary is explicit.
+- Codex Desktop setup guidance exists.
 - No real customer data is present.
 
 ## EPIC-02 - Core Migration Workflow And Templates
@@ -108,6 +110,7 @@ Out of scope:
 | US-02.4 | As a spec owner, I want migration-ready User Story and Hard Spec templates so implementation does not expand hidden scope. | Build readiness. |
 | US-02.5 | As an architect, I want an ADR template so target architecture constraints and patterns are explicit. | Design clarity. |
 | US-02.6 | As an orchestrator, I want a closeout template so validation, risks and follow-ups are not lost. | Continuity. |
+| US-02.7 | As a decision maker, I want one or two viable options plus a recommendation so validation, architecture and scope decisions are clear. | Decision quality. |
 
 ### Definition of Done
 
@@ -373,14 +376,16 @@ Out of scope:
 
 1. Create repository folder structure.
 2. Create `docs/architecture/clean-architecture.md`.
-3. Create `docs/workflow/factory-workflow.md`.
-4. Create `templates/core/migration-package-index.md`.
-5. Create all V0 migration templates.
-6. Create agent role docs.
-7. Create the Codex skill.
-8. Create minimal scripts.
-9. Create fake login migration example.
-10. Run local checks and public-safety review.
+3. Create `docs/architecture/decision-support.md`.
+4. Create `docs/setup/codex-desktop.md`.
+5. Create `docs/workflow/factory-workflow.md`.
+6. Create `templates/core/migration-package-index.md`.
+7. Create all V0 migration templates.
+8. Create agent role docs.
+9. Create the Codex skill.
+10. Create minimal scripts.
+11. Create fake login migration example.
+12. Run local checks and public-safety review.
 
 ## Global Definition Of Done
 

@@ -14,6 +14,16 @@ contracts, hooks and minimal validation scripts. It is designed to be public on
 GitHub while allowing private teams to apply it to real customer or company
 work in their own repositories.
 
+## Product Principle
+
+Be minimalist, not simplistic.
+
+The factory should do more with less: fewer moving parts, clearer contracts,
+clean boundaries and stronger evidence. Minimalism means removing accidental
+complexity. It does not mean avoiding architecture when the work has real
+domain rules, integration risk, behavior-parity needs or long-term maintenance
+pressure.
+
 ## Product Thesis
 
 Most migrations fail because teams mix several concerns into one effort:
@@ -42,6 +52,8 @@ equivalent unless a separate new-feature story approves the change.
 
 - Preserve behavior while improving architecture.
 - Make migration work explainable to engineers, customers and reviewers.
+- Offer one or two viable options plus a recommendation when a decision is
+  required.
 - Produce Epic, User Story, Hard Spec and review-ready implementation packets.
 - Keep decisions, evidence and progress linked.
 - Provide agent roles with clear responsibilities and blocked protocols.
@@ -102,6 +114,46 @@ Delivery:
   prompt.
 - Dependency Inversion: core workflow does not depend on Codex, Supabase, Jira,
   GitHub or a programming language.
+
+## Decision Support Contract
+
+When the factory reaches a validation, architecture, scope or implementation
+decision, it should not just ask an open-ended question. It should present a
+small decision set.
+
+Default decision shape:
+
+```text
+Decision needed:
+  What must be decided and why now.
+
+Option A:
+  Description, benefits, cost, risk, validation impact.
+
+Option B:
+  Description, benefits, cost, risk, validation impact.
+
+Recommendation:
+  The option the factory recommends and why.
+
+Decision gate:
+  Who must approve, what evidence is required and what happens next.
+```
+
+Rules:
+
+- Prefer one clear recommendation with at most two serious alternatives.
+- Do not include weak options just to look balanced.
+- Separate facts, assumptions and judgment.
+- If evidence is insufficient, recommend a Spike instead of guessing.
+- Record accepted decisions in the package index and the architecture decision
+  artifact when they affect implementation.
+- Keep recommendations proportional: clean architecture, DDD, ports/adapters or
+  patterns are justified only when they protect real boundaries, invariants,
+  behavior parity or independent evolution.
+
+See [Decision Support](architecture/decision-support.md) for the detailed
+contract.
 
 ## Factory Lifecycle
 

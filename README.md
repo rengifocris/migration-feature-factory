@@ -17,6 +17,10 @@ The core rule:
   skills, hooks, scripts and public/private boundaries.
 - [Backlog](docs/backlog.md): ordered implementation backlog for building the
   factory.
+- [Decision Support](docs/architecture/decision-support.md): how the factory
+  presents options, tradeoffs and recommendations.
+- [Codex Desktop Setup](docs/setup/codex-desktop.md): recommended local setup
+  for using the factory in Codex Desktop.
 
 ## Scope
 
@@ -32,6 +36,14 @@ V0 is Markdown-first:
 
 Supabase, semantic search, dashboards and external integrations are future
 adapters, not V0 dependencies.
+
+## Operating Principle
+
+Be minimalist, not simplistic.
+
+Use the smallest solution that preserves behavior, clarifies intent and keeps
+future change safe. Add structure only when it protects a real boundary,
+decision, invariant or validation need.
 
 ## Public Safety
 
