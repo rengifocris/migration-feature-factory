@@ -22,6 +22,7 @@ EXCLUDED_DIRS = {
     ".next",
     ".tox",
     ".venv",
+    ".codex-venv",
     "__pycache__",
     "build",
     "coverage",
@@ -61,6 +62,13 @@ DEFAULT_SCAN_TERMS = (
     "schema",
     "validator",
 )
+STOP_SCAN_TERMS = {
+    "and",
+    "for",
+    "non",
+    "the",
+    "with",
+}
 
 
 @dataclass(frozen=True)
@@ -234,6 +242,8 @@ def normalized_terms(args: argparse.Namespace) -> list[str]:
             if len(term) < 3:
                 continue
             key = term.lower()
+            if key in STOP_SCAN_TERMS:
+                continue
             if key in seen:
                 continue
             seen.add(key)
@@ -244,7 +254,11 @@ def normalized_terms(args: argparse.Namespace) -> list[str]:
 def iter_source_files(root: Path) -> list[Path]:
     files: list[Path] = []
     for current, dirs, names in os.walk(root):
-        dirs[:] = [name for name in dirs if name not in EXCLUDED_DIRS]
+        dirs[:] = [
+            name
+            for name in dirs
+            if name not in EXCLUDED_DIRS and not name.startswith(".")
+        ]
         current_path = Path(current)
         for name in names:
             path = current_path / name
