@@ -212,13 +212,15 @@ def markdown_cell(value: object) -> str:
 
 
 def classify_signal(term: str, path: str) -> tuple[str, str]:
-    haystack = f"{term} {path}".lower()
+    term_text = term.lower()
+    path_text = path.lower()
+    haystack = f"{term_text} {path_text}"
     if "enrich" in haystack:
         return "enrichment", "Route through enrichment model/client governance."
+    if "mapper" in term_text or "/mapper/" in path_text:
+        return "mapping boundary", "Map explicitly and cover with parity fixtures."
     if "client" in haystack or "adapter" in haystack or "acl" in haystack:
         return "integration boundary", "Keep behind adapter/ACL and mock at the boundary."
-    if "mapper" in haystack:
-        return "mapping boundary", "Map explicitly and cover with parity fixtures."
     if "dto" in haystack or "schema" in haystack or "contract" in haystack:
         return "generated/boundary contract", "Keep generated contract shape at the boundary."
     if "model" in haystack or "record" in haystack or "canonical" in haystack:
@@ -278,7 +280,7 @@ def iter_source_files(root: Path) -> list[Path]:
 def scan_code_signals(args: argparse.Namespace) -> list[CodeSignal]:
     terms = normalized_terms(args)
     signals: list[CodeSignal] = []
-    seen: set[tuple[str, str, int, str]] = set()
+    seen: set[tuple[str, str, str]] = set()
 
     for root in args.code_root:
         if not root.is_dir():
@@ -297,7 +299,7 @@ def scan_code_signals(args: argparse.Namespace) -> list[CodeSignal]:
                 for term in terms:
                     if term.lower() not in lowered:
                         continue
-                    key = (root_label, relative, index, term.lower())
+                    key = (root_label, relative, term.lower())
                     if key in seen:
                         continue
                     seen.add(key)
