@@ -1,6 +1,6 @@
 # Migration Feature Factory Backlog
 
-Status: draft
+Status: V0 release-ready
 Language policy: English only
 Owner: local maintainer
 
@@ -28,7 +28,7 @@ Build a public-safe V0 of Migration Feature Factory:
 | 5 | EPIC-05 | Epic | Traceability harness and hooks | completed | Package index, checks and hook examples. |
 | 6 | EPIC-06 | Epic | Minimal scripts | completed | Scaffold, check and context summary. |
 | 7 | EPIC-07 | Epic | Public fake example | completed | Demonstrates end-to-end migration package. |
-| 8 | EPIC-08 | Epic | Release readiness | draft | License, README polish, checks and public safety review. |
+| 8 | EPIC-08 | Epic | Release readiness | completed | License, README polish, checks and public safety review. |
 
 ## EPIC-01 - Public Repo Foundation
 
@@ -77,8 +77,8 @@ Out of scope:
 - [x] Repository `AGENTS.md` exists.
 - [x] Clean architecture guidance exists.
 - [x] Codex Desktop setup guidance exists.
-- [ ] Contribution guide exists.
-- [ ] Release/public-safety checklist exists.
+- [x] Contribution guide exists.
+- [x] Release/public-safety checklist exists.
 
 ## EPIC-02 - Core Migration Workflow And Templates
 
@@ -399,7 +399,7 @@ Out of scope:
 
 ## EPIC-08 - Release Readiness
 
-Status: draft
+Status: completed
 
 ### Business Outcome
 
@@ -437,6 +437,17 @@ Out of scope:
 - Smoke checks pass.
 - Next release step is clear.
 
+### Progress
+
+- [x] MIT License exists.
+- [x] License decision exists.
+- [x] Contribution guide exists.
+- [x] README has release-readiness links.
+- [x] Public-safety review exists.
+- [x] Release checklist exists.
+- [x] Local smoke checks pass.
+- [x] Next release steps are documented.
+
 ## Spike Candidates
 
 | ID | Question | Timing | Output |
@@ -459,7 +470,7 @@ Out of scope:
 10. [x] Create traceability harness and hook examples.
 11. [x] Create minimal scripts.
 12. [x] Create fake login migration example.
-13. [ ] Run local checks and public-safety review.
+13. [x] Run local checks and public-safety review.
 
 ## Global Definition Of Done
 

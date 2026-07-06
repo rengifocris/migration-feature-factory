@@ -1,6 +1,6 @@
 # Migration Feature Factory
 
-Status: draft planning scaffold
+Status: V0 release-ready
 
 Migration Feature Factory is a public-safe system for moving legacy features into
 new applications or services while preserving observable behavior and improving
@@ -19,6 +19,11 @@ The core rule:
   skills, hooks, scripts and public/private boundaries.
 - [Backlog](docs/backlog.md): ordered implementation backlog for building the
   factory.
+- [Release Checklist](docs/release/release-checklist.md): V0 release scope,
+  smoke checks and next release decision.
+- [Public Safety Review](docs/release/public-safety-review.md): V0 public-safety
+  evidence and residual risks.
+- [Contributing](CONTRIBUTING.md): public-safe contribution workflow.
 - [Clean Architecture](docs/architecture/clean-architecture.md): how the
   factory applies clean architecture, SOLID and screaming architecture.
 - [Decision Support](docs/architecture/decision-support.md): how the factory
@@ -68,6 +73,21 @@ python3 scripts/summarize_context.py --help
 ```
 
 See [Minimal Scripts](docs/workflow/minimal-scripts.md) for command examples.
+
+## Release Readiness
+
+V0 is release-ready for public GitHub use.
+
+Evidence:
+
+- [V0 Release Checklist](docs/release/release-checklist.md)
+- [Public Safety Review](docs/release/public-safety-review.md)
+- [License Decision](docs/release/license-decision.md)
+- [MIT License](LICENSE)
+
+## License
+
+This repository is available under the [MIT License](LICENSE).
 
 ## Scope
 
