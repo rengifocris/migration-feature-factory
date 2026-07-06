@@ -20,6 +20,8 @@ Observable behavior changes require a separate approved story.
   architecture constraints or scope changes appear.
 - Read `references/traceability-harness.md` when package links, status,
   context compaction or closeout continuity matter.
+- Read `../../../docs/workflow/traceability-harness.md` when hook mapping or
+  package-wide traceability rules matter.
 - Read `../../../docs/architecture/decision-support.md` when a decision needs
   options and a recommendation.
 - Read `../../../docs/agents/README.md` plus the relevant role file when a role

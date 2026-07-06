@@ -25,6 +25,8 @@ The core rule:
   presents options, tradeoffs and recommendations.
 - [Factory Workflow](docs/workflow/factory-workflow.md): migration gates from
   intake through closeout.
+- [Traceability Harness](docs/workflow/traceability-harness.md): package index,
+  traceability rules, change log discipline and optional hook mapping.
 - [Agent Roles](docs/agents/README.md): responsibility contracts for
   orchestrator, discovery, product/spec, architecture, implementation, review
   and writing roles.

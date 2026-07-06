@@ -99,18 +99,14 @@ The repository `AGENTS.md` should define durable expectations:
 
 Hooks should be optional in V0.
 
-Recommended examples:
+The repository includes an inert example file:
 
 ```text
-Stop:
-  python scripts/factory_check.py examples/fake-login-migration
-
-PreCompact:
-  python scripts/summarize_context.py examples/fake-login-migration
-
-PostToolUse:
-  python scripts/factory_check.py examples/fake-login-migration --light
+.codex/hooks.json.example
 ```
+
+To use it later, copy it to `.codex/hooks.json` only after reviewing the
+commands and trusting the project hook layer in Codex.
 
 Notes:
 
@@ -119,6 +115,9 @@ Notes:
 - Keep public hook files as examples, not active local policy.
 - Prefer git-root-based paths in hook commands so they work from subfolders.
 - Hook scripts must not print secrets, credentials or private source content.
+- The V0 hook example maps `PostToolUse`, `PreCompact` and `Stop` to the future
+  minimal scripts documented in
+  `docs/workflow/traceability-harness.md`.
 
 ## Codex Desktop Settings
 

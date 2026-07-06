@@ -1,0 +1,42 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash|apply_patch|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -lc 'root=\"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\"; script=\"$root/scripts/factory_check.py\"; if [ -f \"$script\" ]; then if [ -n \"${MIGRATION_FACTORY_PACKAGE:-}\" ]; then python3 \"$script\" --light \"$MIGRATION_FACTORY_PACKAGE\"; else python3 \"$script\" --light; fi; fi'",
+            "timeout": 30,
+            "statusMessage": "Checking migration artifact links"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "manual|auto",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -lc 'root=\"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\"; script=\"$root/scripts/summarize_context.py\"; if [ -f \"$script\" ]; then if [ -n \"${MIGRATION_FACTORY_PACKAGE:-}\" ]; then python3 \"$script\" \"$MIGRATION_FACTORY_PACKAGE\"; else python3 \"$script\"; fi; fi'",
+            "timeout": 30,
+            "statusMessage": "Refreshing migration context pack"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -lc 'root=\"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\"; script=\"$root/scripts/factory_check.py\"; if [ -f \"$script\" ]; then if [ -n \"${MIGRATION_FACTORY_PACKAGE:-}\" ]; then python3 \"$script\" \"$MIGRATION_FACTORY_PACKAGE\"; else python3 \"$script\"; fi; fi'",
+            "timeout": 60,
+            "statusMessage": "Checking migration package consistency"
+          }
+        ]
+      }
+    ]
+  }
+}

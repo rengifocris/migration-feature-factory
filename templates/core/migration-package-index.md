@@ -38,21 +38,27 @@ Last updated: YYYY-MM-DD
 
 ## Traceability Matrix
 
-| Source | Requirement / Behavior | Target Artifact | Validation Evidence | Status |
-| --- | --- | --- | --- | --- |
-| `<legacy source>` | <behavior> | `<artifact section>` | `<test/check/evidence>` | pending |
+Use stable IDs such as `LB-01`, `AC-01`, `HS-01`, `ADR-01`, `EV-01`, `CHG-01`
+and `R-01`.
+
+| Source | ID | Requirement / Behavior | Target Artifact | Validation Evidence | Status |
+| --- | --- | --- | --- | --- | --- |
+| `<legacy source>` | LB-01 | <behavior> | `<artifact section>` | EV-01 | pending |
+
+Status values: `pending`, `planned`, `validated`, `gap`, `accepted-risk`,
+`superseded`.
 
 ## Decision Log
 
-| Date | Decision | Options Considered | Recommendation | Artifact Updated |
-| --- | --- | --- | --- | --- |
-| YYYY-MM-DD | <decision> | <options> | <recommendation> | `<path>` |
+| Date | ID | Decision | Options Considered | Recommendation | Artifact Updated |
+| --- | --- | --- | --- | --- | --- |
+| YYYY-MM-DD | ADR-01 | <decision> | <options> | <recommendation> | `<path>` |
 
 ## Change Log
 
-| Date | Change | Classification | Artifacts Updated | Decision |
-| --- | --- | --- | --- | --- |
-| YYYY-MM-DD | <change> | <classification> | `<paths>` | <decision> |
+| Date | ID | Change | Classification | Artifacts Updated | Decision |
+| --- | --- | --- | --- | --- | --- |
+| YYYY-MM-DD | CHG-01 | <change> | <classification> | `<paths>` | <decision> |
 
 ## Open Questions
 
@@ -62,9 +68,9 @@ Last updated: YYYY-MM-DD
 
 ## Risks
 
-| Risk | Impact | Mitigation | Status |
-| --- | --- | --- | --- |
-| <risk> | <impact> | <mitigation> | open |
+| ID | Risk | Impact | Mitigation | Status |
+| --- | --- | --- | --- | --- |
+| R-01 | <risk> | <impact> | <mitigation> | open |
 
 ## Validation Summary
 
@@ -82,6 +88,16 @@ Last updated: YYYY-MM-DD
 - Current blockers:
 - Files/artifacts to inspect first:
 - Next prompt:
+
+## Traceability Rules
+
+- Every discovered legacy behavior maps to validation evidence or a documented
+  gap.
+- Every acceptance criterion maps to Hard Spec coverage.
+- Every Hard Spec requirement maps to validation evidence or accepted risk.
+- Every architecture constraint maps to a decision or implementation boundary.
+- Every change request is classified and recorded in the change log.
+- Superseded IDs are not reused.
 
 ## Consistency Checklist
 

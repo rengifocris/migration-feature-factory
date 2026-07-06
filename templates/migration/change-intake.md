@@ -2,6 +2,7 @@
 
 Status: draft
 Feature ID: <feature-id>
+Change ID: CHG-XX
 Related package index: `migration-package-index.md`
 Sensitivity: public-safe-example | internal | confidential
 

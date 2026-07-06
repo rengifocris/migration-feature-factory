@@ -25,7 +25,7 @@ Build a public-safe V0 of Migration Feature Factory:
 | 2 | EPIC-02 | Epic | Core migration workflow and templates | completed | Factory gates and artifact contracts. |
 | 3 | EPIC-03 | Epic | Agent role system | completed | Responsibility boundaries and handoff contracts. |
 | 4 | EPIC-04 | Epic | Codex skill package | completed | Reusable skill and references. |
-| 5 | EPIC-05 | Epic | Traceability harness and hooks | draft | Package index, checks and hook examples. |
+| 5 | EPIC-05 | Epic | Traceability harness and hooks | completed | Package index, checks and hook examples. |
 | 6 | EPIC-06 | Epic | Minimal scripts | draft | Scaffold, check and context summary. |
 | 7 | EPIC-07 | Epic | Public fake example | draft | Demonstrates end-to-end migration package. |
 | 8 | EPIC-08 | Epic | Release readiness | draft | License, README polish, checks and public safety review. |
@@ -250,7 +250,7 @@ Out of scope:
 
 ## EPIC-05 - Traceability Harness And Hooks
 
-Status: draft
+Status: completed
 
 ### Business Outcome
 
@@ -287,6 +287,15 @@ Out of scope:
 - Package index template exists.
 - Traceability rules are documented.
 - Hook examples are public-safe and disabled unless users copy/trust them.
+
+### Progress
+
+- [x] Traceability harness documentation exists.
+- [x] Package index template includes ID, matrix, decision, change and risk
+      traceability rules.
+- [x] Change intake template includes a stable change ID.
+- [x] Optional `.codex/hooks.json.example` exists and is inert by default.
+- [x] Hook-to-script mapping is documented for EPIC-06 scripts.
 
 ## EPIC-06 - Minimal Scripts
 
@@ -431,9 +440,10 @@ Out of scope:
 7. [x] Create remaining V0 migration/product/review templates.
 8. [x] Create agent role docs.
 9. [x] Create the Codex skill.
-10. [ ] Create minimal scripts.
-11. [ ] Create fake login migration example.
-12. [ ] Run local checks and public-safety review.
+10. [x] Create traceability harness and hook examples.
+11. [ ] Create minimal scripts.
+12. [ ] Create fake login migration example.
+13. [ ] Run local checks and public-safety review.
 
 ## Global Definition Of Done
 
