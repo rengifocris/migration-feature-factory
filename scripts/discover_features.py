@@ -27,6 +27,8 @@ EXCLUDED_DIRS = {
     ".next",
     ".tox",
     ".venv",
+    "BOOT-INF",
+    "META-INF",
     "__pycache__",
     "build",
     "coverage",
