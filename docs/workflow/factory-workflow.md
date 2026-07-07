@@ -29,6 +29,11 @@ architecture.
 V0.2 can create discovery inventories, draft packages and a roadmap
 automatically. These generated artifacts still enter Gate 1 as drafts.
 
+Autonomous gated mode extends this workflow by allowing the factory to generate
+behavior evidence, candidate-final specs, code patches and architecture-tool
+recommendations automatically. Approval remains a human gate. See
+[Autonomous Gated Migration](autonomous-gated-migration.md).
+
 ## Gate 0 - Optional Automated Discovery
 
 Goal: create a starting inventory and package set from source repository entry
@@ -51,6 +56,14 @@ Rule:
 
 Generated packages are discovery drafts. They do not approve implementation and
 do not prove behavior parity.
+
+Autonomous extension:
+
+- generated evidence may become `candidate-final` when tests, comparisons or
+  accepted manual evidence support it;
+- generated specs may become `candidate-final` when traceability is complete;
+- code patches may be generated only after behavior, spec and architecture gates
+  are approved.
 
 ## Gate 1 - Intake
 
@@ -132,6 +145,13 @@ Rule:
 Unit tests alone are not enough when the legacy contract includes API behavior,
 permissions, error semantics, integrations or side effects.
 
+Autonomous extension:
+
+The factory should execute or generate as much parity evidence as practical:
+contract tests, mock-server scenarios, golden-master snapshots, fixture
+comparisons and source-vs-target checks. Evidence becomes binding only after the
+behavior baseline is approved.
+
 ## Gate 4 - Change Intake And Classification
 
 Goal: prevent new discoveries from silently changing migration scope.
@@ -211,6 +231,13 @@ Rule:
 
 The Hard Spec must satisfy the User Story without expanding scope.
 
+Autonomous extension:
+
+The factory may mark generated Epic, User Story and Hard Spec artifacts as
+`candidate-final` when acceptance criteria, Hard Spec requirements, decisions
+and evidence links are internally consistent. A human approval gate promotes
+them to `approved`.
+
 ## Gate 8 - Architecture Decision
 
 Goal: choose target architecture intentionally.
@@ -253,6 +280,12 @@ Include:
 Rule:
 
 Developer scope is limited by the accepted Hard Spec and implementation brief.
+
+Autonomous extension:
+
+The factory may generate or apply code patches in a controlled branch/worktree
+after the relevant gates are approved. Commit, push, PR, merge, deployment and
+release remain human-gated operations.
 
 ## Gate 10 - Review And QA
 

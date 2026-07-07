@@ -14,8 +14,9 @@ Automated discovery turns a source repository into a migration starting point:
 5. optionally generate technical foundation and mock/model-governance strategy
    from the inventory and target context.
 
-This is automation for discovery and planning. It is not unattended code
-migration.
+This is automation for discovery and planning. Autonomous gated migration builds
+on this by adding behavior proof, candidate-final specs and code patch
+generation with human approval gates.
 
 ## Automation Boundary
 
@@ -27,7 +28,7 @@ The factory may automatically create:
 - roadmap recommendations;
 - discovery-only traceability seeds.
 
-The factory must not automatically claim:
+The factory must not automatically approve:
 
 - complete behavior understanding;
 - implementation readiness;
@@ -38,6 +39,9 @@ The factory must not automatically claim:
 Implementation starts only after the generated package is reviewed and updated
 with behavior evidence, validation strategy, architecture boundaries and an
 implementation brief.
+
+For the higher-autonomy target mode, see
+[Autonomous Gated Migration](autonomous-gated-migration.md).
 
 ## Pipeline
 

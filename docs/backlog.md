@@ -1,6 +1,6 @@
 # Migration Feature Factory Backlog
 
-Status: V0.4 mock, data and model governance implemented
+Status: V0.5 autonomous gated migration defined
 Language policy: English only
 Owner: local maintainer
 
@@ -32,6 +32,7 @@ Build a public-safe Migration Feature Factory:
 | 9 | EPIC-09 | Epic | Automated discovery and package generation | completed | Source feature inventory, generated packages and roadmap. |
 | 10 | EPIC-10 | Epic | Technical foundation generation | completed | Architecture blueprint, generation policy, patterns and diagrams. |
 | 11 | EPIC-11 | Epic | Mock server, synthetic data and model governance | completed | Mock strategy, happy/edge/bad synthetic data and raw/enriched model governance. |
+| 12 | EPIC-12 | Epic | Autonomous gated migration mode | completed | Automatic behavior proof, candidate-final specs, code patches and architecture-tool decisions with human gates. |
 
 ## EPIC-01 - Public Repo Foundation
 
@@ -623,6 +624,63 @@ Out of scope:
 - [x] `docs/workflow/mock-server-and-model-governance.md` exists.
 - [x] README, vision, skill and minimal script docs reference the new capability.
 
+## EPIC-12 - Autonomous Gated Migration Mode
+
+Status: completed
+
+### Business Outcome
+
+Define the target factory mode where automation performs the full migration
+loop while human gates approve final behavior baselines, specs, architecture
+decisions, code application, merge and release.
+
+### Scope
+
+In scope:
+
+- automatic behavior proof target capability;
+- final-candidate Epic/User Story/Hard Spec generation rules;
+- automatic code migration patch flow;
+- company-specific architecture tool recommendation flow;
+- status vocabulary for generated, candidate-final, approved, applied and
+  rejected artifacts;
+- human gate rules for approval, merge, deployment and architecture adoption;
+- public-safe workflow documentation.
+
+Out of scope:
+
+- implementing unattended production migration;
+- bypassing target repo CI, tests or architecture rules;
+- committing, pushing, opening PRs, merging or deploying without explicit
+  approval;
+- storing private behavior evidence in the public repository.
+
+### Candidate Stories
+
+| ID | Story | Value |
+| --- | --- | --- |
+| US-12.1 | As a QA reviewer, I want the factory to generate and run behavior proof automatically so parity evidence is produced before implementation. | Regression control. |
+| US-12.2 | As a product/spec owner, I want generated Epics and User Stories to become candidate-final automatically when traceability is complete. | Throughput. |
+| US-12.3 | As a developer, I want the factory to generate and apply code patches after gates are approved so migration execution becomes repeatable. | Delivery speed. |
+| US-12.4 | As an architect, I want company-specific tools and libraries detected and recommended automatically so platform fit is explicit. | Architecture governance. |
+| US-12.5 | As an approver, I want human gates before approval, merge, deployment and architecture adoption so automation remains controlled. | Safety. |
+
+### Definition of Done
+
+- Autonomous gated migration workflow doc exists.
+- README, vision, factory workflow, automated discovery and skill reference the
+  capability.
+- Status vocabulary distinguishes generated output from approved output.
+- Human gates are explicit for behavior baseline, specs, code patches,
+  architecture-tool decisions, merge and deployment.
+
+### Progress
+
+- [x] `docs/workflow/autonomous-gated-migration.md` exists.
+- [x] README references autonomous gated migration.
+- [x] Vision and factory workflow describe the target mode.
+- [x] Backlog captures follow-up implementation stories.
+
 ## Spike Candidates
 
 | ID | Question | Timing | Output |
@@ -633,6 +691,8 @@ Out of scope:
 | SP-04 | Should automated discovery move from regex heuristics to language-specific AST adapters? | After V0.2 usage on real repos. | Analyzer adapter decision. |
 | SP-05 | Should the factory generate code scaffolds after technical foundation approval? | After V0.3 target validation. | Code generation boundary decision. |
 | SP-06 | Should the mock/model generator emit tool-specific fixtures for approved stacks? | After V0.4 target validation. | Mock adapter generation decision. |
+| SP-07 | Which behavior-proof runner should be implemented first: API contract comparison, existing test mining or golden-master capture? | Before EPIC-13 implementation. | Behavior proof runner decision. |
+| SP-08 | Should code migration generate patches only or also manage branches/PR drafts? | Before EPIC-14 implementation. | Code execution boundary decision. |
 
 ## Immediate Next Work Queue
 
@@ -653,7 +713,11 @@ Out of scope:
 15. [x] Document automated discovery and package generation.
 16. [x] Create technical foundation generator.
 17. [x] Create mock-server, synthetic-data and model-governance generator.
-18. [ ] Run automation against the first private source repo and review the generated packages.
+18. [x] Define autonomous gated migration mode.
+19. [ ] Run automation against the first private source repo and review the generated packages.
+20. [ ] Implement behavior proof runner.
+21. [ ] Implement candidate-final spec promotion checks.
+22. [ ] Implement gated code patch generation.
 
 ## Global Definition Of Done
 

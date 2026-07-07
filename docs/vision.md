@@ -62,13 +62,17 @@ equivalent unless a separate new-feature story approves the change.
 - Generate mock-server, synthetic-data and model-governance strategies when
   migrations depend on clients, enrichment, DTO boundaries, mappers or
   canonical records.
+- Move toward autonomous gated migration: automatic behavior proof,
+  final-candidate specs, code patch generation and architecture-tool
+  recommendations with explicit human approval gates.
 - Stay public-safe by avoiding real customer data.
 
 ## Non-Goals
 
 - V0 is not a full web app.
 - V0 is not a Supabase memory platform.
-- V0 does not perform automatic code migration.
+- V0 does not merge, deploy or approve automatic code migration without a human
+  gate.
 - V0 does not replace target-repo tests, CI or architecture conventions.
 - V0 does not hide new features inside behavior-preserving migration work.
 
@@ -288,10 +292,19 @@ The factory should automate the repetitive parts of migration preparation:
 - generate technical foundation specs before code generation.
 - generate mock-server, synthetic-data and model-governance strategy before
   implementation when clients, enrichment or model boundaries matter.
+- generate behavior evidence and mark it as `candidate-final` only when it can
+  be executed, compared or explicitly accepted as manual evidence.
+- generate Epics, User Stories, Hard Specs and implementation briefs as
+  `candidate-final` when traceability is complete.
+- generate and apply code patches only after the relevant behavior, spec and
+  architecture gates are approved.
+- recommend company-specific architecture tools from target context, then wait
+  for an explicit architecture decision.
 
-The factory should not automatically implement all features. Code migration
-requires reviewed behavior evidence, target architecture boundaries, parity
-strategy and an implementation brief.
+The factory should automatically do as much of the migration loop as possible,
+but it should not automate approval. Code migration requires approved behavior
+evidence, target architecture boundaries, parity strategy and implementation
+brief before patches are applied or promoted.
 
 This keeps the factory useful for large repos without turning it into a blind
 rewrite tool.
@@ -328,6 +341,12 @@ V0.4 adds mock-server, synthetic-data and model-governance generation:
 ```text
 scripts/
   generate_mock_and_model_governance.py
+```
+
+V0.5 defines autonomous gated migration:
+
+```text
+docs/workflow/autonomous-gated-migration.md
 ```
 
 Responsibilities:
@@ -379,6 +398,10 @@ V0.2: automated source discovery, package generation and roadmap creation.
 V0.3: technical foundation and architecture blueprint generation.
 
 V0.4: mock-server, synthetic-data and model-governance generation.
+
+V0.5: autonomous gated migration design: automatic behavior proof,
+candidate-final specs, code patch execution and architecture-tool
+recommendations with approval gates.
 
 V1: CLI quality improvements, richer checks, plugin packaging and more examples.
 

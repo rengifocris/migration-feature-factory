@@ -1,6 +1,6 @@
 # Migration Feature Factory
 
-Status: V0.4 mock, data and model governance implemented
+Status: V0.5 autonomous gated migration defined
 
 Migration Feature Factory is a public-safe system for moving legacy features into
 new applications or services while preserving observable behavior and improving
@@ -38,6 +38,9 @@ The core rule:
 - [Mock Server And Model Governance](docs/workflow/mock-server-and-model-governance.md):
   mock-server strategy, synthetic data, code-context signals and model/client
   governance.
+- [Autonomous Gated Migration](docs/workflow/autonomous-gated-migration.md):
+  target mode for automatic behavior proof, final-candidate specs, code
+  migration patches and architecture-tool recommendations with human gates.
 - [Traceability Harness](docs/workflow/traceability-harness.md): package index,
   traceability rules, change log discipline and optional hook mapping.
 - [Minimal Scripts](docs/workflow/minimal-scripts.md): standard-library
@@ -96,7 +99,7 @@ See [Minimal Scripts](docs/workflow/minimal-scripts.md) for command examples.
 V0.1 is released for public GitHub use. V0.2 adds source feature discovery,
 package generation and roadmap creation. V0.3 adds technical foundation and
 architecture blueprint generation. V0.4 adds mock-server, synthetic-data and
-model-governance generation.
+model-governance generation. V0.5 defines autonomous gated migration.
 
 Evidence:
 
@@ -125,6 +128,8 @@ V0 is Markdown-first:
   code-generation policy and diagrams;
 - mock-server, synthetic-data and model-governance generation for external
   clients, enrichment flows, DTO boundaries, mappers and fixtures;
+- autonomous gated migration design for behavior proof, final-candidate specs,
+  code patches and architecture-tool decisions with approval gates;
 - a fake public example with no real customer data.
 
 Supabase, semantic search, dashboards and external integrations remain future

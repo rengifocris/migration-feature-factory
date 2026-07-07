@@ -21,6 +21,9 @@ Observable behavior changes require a separate approved story.
 - Read `../../../docs/workflow/mock-server-and-model-governance.md` when the
   user needs mock servers, synthetic data, enrichment flows, clients, mappers,
   raw/enriched records or model-governance decisions.
+- Read `../../../docs/workflow/autonomous-gated-migration.md` when the user
+  expects automatic behavior proof, candidate-final specs, code patch
+  generation or company-specific architecture-tool decisions with human gates.
 - Read `references/factory-workflow.md` to run the skill operating loop.
 - Read `references/behavior-parity.md` when behavior equivalence or validation
   evidence is involved.
@@ -41,24 +44,29 @@ Observable behavior changes require a separate approved story.
 1. Classify the request as migration, migration plus constraint, new feature,
    improvement or Spike.
 2. If the user asks for automatic preparation across many features, run
-   discovery and generate draft packages before selecting implementation scope.
+   discovery and generate packages, roadmap and foundation artifacts before
+   selecting implementation scope.
 3. Generate or update the technical foundation when architecture, stack,
    company libraries, vertical slicing, DTOs, models, ACLs, mappers, validators
    or code style are material.
 4. Generate or update mock-server, synthetic-data and model-governance strategy
    when clients, enrichment, generated DTOs, raw/enriched records, mappers or
    validation fixtures are material.
-5. Create or update the migration package index before adding standalone
+5. For autonomous gated mode, generate behavior evidence, candidate-final specs,
+   architecture-tool recommendations and code patch plans as far as local
+   evidence safely allows; never treat generated output as approved without a
+   human gate.
+6. Create or update the migration package index before adding standalone
    artifacts.
-6. Capture intake, legacy behavior and parity evidence before implementation
+7. Capture intake, legacy behavior and parity evidence before implementation
    planning.
-7. Convert the validated behavior contract into product/spec artifacts.
-8. Choose architecture proportionally: local cleanup, module cleanup, boundary
+8. Convert the validated behavior contract into product/spec artifacts.
+9. Choose architecture proportionally: local cleanup, module cleanup, boundary
    cleanup, domain model or clean architecture.
-9. Produce an implementation brief only after scope, non-goals, behavior
+10. Produce an implementation brief only after scope, non-goals, behavior
    contract, architecture boundaries and validation evidence are clear.
-10. Keep peer review, code review and QA review separate.
-11. Close with validation evidence, residual risk, decisions and a compact
+11. Keep peer review, code review and QA review separate.
+12. Close with validation evidence, residual risk, decisions and a compact
    continuation context.
 
 ## Decision Discipline
@@ -66,6 +74,10 @@ Observable behavior changes require a separate approved story.
 When validation, architecture or scope needs user confirmation, offer one or two
 serious options plus a recommendation. If evidence is insufficient, recommend a
 Spike instead of implementation.
+
+Generated behavior proof, specs, code patches and architecture-tool
+recommendations can be `candidate-final`; only explicit human approval makes
+them accepted implementation authority.
 
 ## Do Not Use This Skill For
 
