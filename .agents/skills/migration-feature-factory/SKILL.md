@@ -44,8 +44,9 @@ Observable behavior changes require a separate approved story.
 1. Classify the request as migration, migration plus constraint, new feature,
    improvement or Spike.
 2. If the user asks for automatic preparation across many features, run
-   discovery and generate packages, roadmap and foundation artifacts before
-   selecting implementation scope.
+   discovery, group raw findings into capability candidates when needed, and
+   generate packages, roadmap and foundation artifacts before selecting
+   implementation scope.
 3. Generate or update the technical foundation when architecture, stack,
    company libraries, vertical slicing, DTOs, models, ACLs, mappers, validators
    or code style are material.

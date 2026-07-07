@@ -325,6 +325,7 @@ V0.2 adds the first automation scripts:
 ```text
 scripts/
   discover_features.py
+  group_inventory_capabilities.py
   generate_migration_packages.py
   build_migration_roadmap.py
 ```
@@ -353,8 +354,11 @@ Responsibilities:
 
 - scaffold_feature.py: creates a feature package from templates.
 - discover_features.py: scans source entry points and writes an inventory.
-- generate_migration_packages.py: creates draft packages for discovered
-  features.
+- group_inventory_capabilities.py: groups raw discovery entries into
+  capability-level candidates when endpoint discovery over-splits the real
+  migration scope.
+- generate_migration_packages.py: creates draft packages for inventory
+  candidates, preferably capability-level candidates for non-trivial services.
 - build_migration_roadmap.py: recommends migration order from inventory risk.
 - generate_technical_foundation.py: creates architecture blueprint, generation
   policy, design-pattern guidance, code-style rules and diagrams.

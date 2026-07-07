@@ -12,7 +12,7 @@ architecture.
 ## Workflow Summary
 
 ```text
-0. Optional automated discovery and package generation
+0. Optional automated discovery, capability grouping and package generation
 1. Intake
 2. Legacy behavior discovery
 3. Behavior parity plan
@@ -26,8 +26,9 @@ architecture.
 11. Closeout
 ```
 
-V0.2 can create discovery inventories, draft packages and a roadmap
-automatically. These generated artifacts still enter Gate 1 as drafts.
+V0.2 can create discovery inventories, capability backlogs, draft packages and
+a roadmap automatically. These generated artifacts still enter Gate 1 as
+drafts.
 
 Autonomous gated mode extends this workflow by allowing the factory to generate
 behavior evidence, candidate-final specs, code patches and architecture-tool
@@ -37,25 +38,29 @@ recommendations automatically. Approval remains a human gate. See
 ## Gate 0 - Optional Automated Discovery
 
 Goal: create a starting inventory and package set from source repository entry
-points.
+points while avoiding endpoint-level over-scoping.
 
 Inputs:
 
 - source repository path;
 - source system name;
 - target system name;
+- optional capability grouping rules;
 - output root for generated packages.
 
 Output:
 
 - source feature inventory;
-- one draft migration package per discovered candidate;
+- capability backlog when raw discovery does not match the real migration
+  slices;
+- one draft migration package per selected candidate;
 - migration roadmap.
 
 Rule:
 
-Generated packages are discovery drafts. They do not approve implementation and
-do not prove behavior parity.
+Raw endpoint entries are behavior evidence, not automatically implementation
+packages. Generated packages are discovery drafts. They do not approve
+implementation and do not prove behavior parity.
 
 Autonomous extension:
 

@@ -33,6 +33,7 @@ Build a public-safe Migration Feature Factory:
 | 10 | EPIC-10 | Epic | Technical foundation generation | completed | Architecture blueprint, generation policy, patterns and diagrams. |
 | 11 | EPIC-11 | Epic | Mock server, synthetic data and model governance | completed | Mock strategy, happy/edge/bad synthetic data and raw/enriched model governance. |
 | 12 | EPIC-12 | Epic | Autonomous gated migration mode | completed | Automatic behavior proof, candidate-final specs, code patches and architecture-tool decisions with human gates. |
+| 13 | EPIC-13 | Epic | Capability grouping guardrail | completed | Raw endpoint discovery can be grouped into capability-level package candidates before roadmap and package generation. |
 
 ## EPIC-01 - Public Repo Foundation
 
@@ -681,6 +682,53 @@ Out of scope:
 - [x] Vision and factory workflow describe the target mode.
 - [x] Backlog captures follow-up implementation stories.
 
+## EPIC-13 - Capability Grouping Guardrail
+
+Status: completed
+
+### Business Outcome
+
+Prevent raw endpoint discovery from becoming an inflated implementation backlog
+when the real migration scope is a smaller set of capabilities.
+
+### Scope
+
+In scope:
+
+- capability backlog generation from discovery JSON;
+- optional project rules for known capability names and match terms;
+- Markdown and JSON capability backlog output;
+- workflow documentation that treats endpoints as behavior evidence;
+- package generation from capability backlog JSON.
+
+Out of scope:
+
+- deciding private project capability names in the public repository;
+- proving behavior automatically;
+- generating or applying code patches.
+
+### Candidate Stories
+
+| ID | Story | Value |
+| --- | --- | --- |
+| US-13.1 | As a migration orchestrator, I want endpoint discoveries grouped into capabilities so the roadmap reflects the real migration plan. | Scope control. |
+| US-13.2 | As an architect, I want optional grouping rules so company or product boundaries can guide package generation without hardcoding private context. | Architecture fit. |
+| US-13.3 | As a reviewer, I want endpoint membership preserved as evidence so traceability is not lost when packages are merged. | Auditability. |
+
+### Definition of Done
+
+- `scripts/group_inventory_capabilities.py` exists.
+- Automated discovery docs recommend capability grouping for non-trivial
+  services.
+- Minimal script docs include grouping in the smoke flow.
+- Package generation can consume capability backlog JSON.
+
+### Progress
+
+- [x] Capability grouping script exists.
+- [x] Workflow docs explain endpoint evidence versus implementation packages.
+- [x] README and minimal scripts reference the guardrail.
+
 ## Spike Candidates
 
 | ID | Question | Timing | Output |
@@ -691,8 +739,8 @@ Out of scope:
 | SP-04 | Should automated discovery move from regex heuristics to language-specific AST adapters? | After V0.2 usage on real repos. | Analyzer adapter decision. |
 | SP-05 | Should the factory generate code scaffolds after technical foundation approval? | After V0.3 target validation. | Code generation boundary decision. |
 | SP-06 | Should the mock/model generator emit tool-specific fixtures for approved stacks? | After V0.4 target validation. | Mock adapter generation decision. |
-| SP-07 | Which behavior-proof runner should be implemented first: API contract comparison, existing test mining or golden-master capture? | Before EPIC-13 implementation. | Behavior proof runner decision. |
-| SP-08 | Should code migration generate patches only or also manage branches/PR drafts? | Before EPIC-14 implementation. | Code execution boundary decision. |
+| SP-07 | Which behavior-proof runner should be implemented first: API contract comparison, existing test mining or golden-master capture? | Before behavior-proof implementation. | Behavior proof runner decision. |
+| SP-08 | Should code migration generate patches only or also manage branches/PR drafts? | Before code-patch implementation. | Code execution boundary decision. |
 
 ## Immediate Next Work Queue
 
@@ -714,10 +762,11 @@ Out of scope:
 16. [x] Create technical foundation generator.
 17. [x] Create mock-server, synthetic-data and model-governance generator.
 18. [x] Define autonomous gated migration mode.
-19. [ ] Run automation against the first private source repo and review the generated packages.
-20. [ ] Implement behavior proof runner.
-21. [ ] Implement candidate-final spec promotion checks.
-22. [ ] Implement gated code patch generation.
+19. [x] Add capability grouping guardrail.
+20. [ ] Run automation against the first private source repo and review the generated packages.
+21. [ ] Implement behavior proof runner.
+22. [ ] Implement candidate-final spec promotion checks.
+23. [ ] Implement gated code patch generation.
 
 ## Global Definition Of Done
 

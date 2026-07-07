@@ -18,7 +18,8 @@ or replace review judgment.
 | --- | --- |
 | `scripts/scaffold_feature.py` | Create a migration package from templates. |
 | `scripts/discover_features.py` | Scan a source repo for likely API, job and listener entry points. |
-| `scripts/generate_migration_packages.py` | Create one draft migration package per discovered source feature. |
+| `scripts/group_inventory_capabilities.py` | Group raw discovery entries into capability-level migration candidates. |
+| `scripts/generate_migration_packages.py` | Create one draft migration package per inventory candidate, preferably capability-level for non-trivial services. |
 | `scripts/build_migration_roadmap.py` | Build a recommended migration order from discovery output. |
 | `scripts/generate_technical_foundation.py` | Generate technical foundation and architecture blueprint docs. |
 | `scripts/generate_mock_and_model_governance.py` | Generate mock-server, synthetic-data and model-governance docs. |
@@ -76,20 +77,22 @@ python3 scripts/discover_features.py \
 Generate packages from fake source discovery:
 
 ```sh
+python3 scripts/group_inventory_capabilities.py \
+  --inventory-json /tmp/discovery.json \
+  --output-json /tmp/capability-backlog.json \
+  --output-md /tmp/capability-backlog.md
+
 python3 scripts/generate_migration_packages.py \
-  --source examples/fake-source-service \
-  --source-name "Fake Source Service" \
+  --inventory-json /tmp/capability-backlog.json \
   --target-system "Target Service" \
-  --output-root /tmp/migration-packages \
-  --write-inventory /tmp/source-feature-inventory.md \
-  --write-inventory-json /tmp/discovery.json
+  --output-root /tmp/migration-packages
 ```
 
 Build a roadmap:
 
 ```sh
 python3 scripts/build_migration_roadmap.py \
-  --inventory-json /tmp/discovery.json \
+  --inventory-json /tmp/capability-backlog.json \
   --packages-root /tmp/migration-packages \
   --output /tmp/migration-roadmap.md
 ```
@@ -136,12 +139,16 @@ python3 scripts/discover_features.py \
   --source-name "Fake Source Service" \
   --format json \
   --output "$tmpdir/discovery.json"
-python3 scripts/generate_migration_packages.py \
+python3 scripts/group_inventory_capabilities.py \
   --inventory-json "$tmpdir/discovery.json" \
+  --output-json "$tmpdir/capability-backlog.json" \
+  --output-md "$tmpdir/capability-backlog.md"
+python3 scripts/generate_migration_packages.py \
+  --inventory-json "$tmpdir/capability-backlog.json" \
   --target-system "Target Service" \
   --output-root "$tmpdir/packages"
 python3 scripts/build_migration_roadmap.py \
-  --inventory-json "$tmpdir/discovery.json" \
+  --inventory-json "$tmpdir/capability-backlog.json" \
   --packages-root "$tmpdir/packages" \
   --output "$tmpdir/migration-roadmap.md"
 python3 scripts/generate_technical_foundation.py \

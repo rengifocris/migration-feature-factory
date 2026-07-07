@@ -84,6 +84,7 @@ The core rule:
 ```sh
 python3 scripts/scaffold_feature.py --help
 python3 scripts/discover_features.py --help
+python3 scripts/group_inventory_capabilities.py --help
 python3 scripts/generate_migration_packages.py --help
 python3 scripts/build_migration_roadmap.py --help
 python3 scripts/generate_technical_foundation.py --help
@@ -124,6 +125,8 @@ V0 is Markdown-first:
 - minimal scripts for scaffold, checks and context summaries;
 - automated discovery scripts for source inventory, package generation and
   roadmap creation;
+- capability grouping so endpoint discovery remains evidence instead of
+  automatically becoming the implementation backlog;
 - technical foundation generation for stack decisions, architecture patterns,
   code-generation policy and diagrams;
 - mock-server, synthetic-data and model-governance generation for external

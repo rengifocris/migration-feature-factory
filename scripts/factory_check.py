@@ -130,7 +130,8 @@ def table_rows(section_text: str) -> list[list[str]]:
 
 
 def clean_path(value: str) -> str:
-    return value.strip().strip("`").strip()
+    path = value.strip().strip("`").strip()
+    return path.split("#", 1)[0]
 
 
 def referenced_artifacts(index_text: str) -> list[str]:
@@ -141,6 +142,10 @@ def referenced_artifacts(index_text: str) -> list[str]:
             continue
         path = clean_path(cells[2])
         if not path or "<" in path or ">" in path:
+            continue
+        if path.lower() in {"related artifact pending", "not applicable", "n/a", "none"}:
+            continue
+        if re.match(r"https?://", path):
             continue
         paths.append(path)
     return paths
